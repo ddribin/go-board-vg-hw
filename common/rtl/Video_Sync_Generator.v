@@ -1,6 +1,6 @@
-// `default_nettype none
+`default_nettype none
 
-module Video_Sync_Generator #(
+module video_sync_generator #(
   // 640 x 480 at 60 Hz (non-interlaced)
   parameter H_VISIBLE       = 640,
   parameter H_RIGHT_BORDER  = 8,
@@ -17,16 +17,16 @@ module Video_Sync_Generator #(
   parameter V_TOP_BORDER    = 8
 ) (
   // Pixel Clock = 25.175 MHz
-  input i_clk,
+  input wire        i_clk,
 
-  output o_hsync,
-  output o_hblank,
-  output o_vsync,
-  output o_vblank,
-  output o_visible,
+  output wire       o_hsync,
+  output wire       o_hblank,
+  output wire       o_vsync,
+  output wire       o_vblank,
+  output wire       o_visible,
 
-  output [9:0] o_hpos,
-  output [9:0] o_vpos
+  output wire [9:0] o_hpos,
+  output wire [9:0] o_vpos
 );
 
   localparam H_BLANK_START = H_VISIBLE + H_RIGHT_BORDER;

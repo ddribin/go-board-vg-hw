@@ -11,7 +11,7 @@ module video_sync_generator_tb (
   output [9:0] o_vpos
 );
 
-  Video_Sync_Generator #(
+  video_sync_generator #(
     // 10 x 3
     .H_VISIBLE(10),
     .H_RIGHT_BORDER(1),
