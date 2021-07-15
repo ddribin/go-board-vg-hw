@@ -42,6 +42,11 @@ static Uint32 fast_SDL_MapRGB(const SDL_PixelFormat * format, Uint8 r, Uint8 g, 
         | (b >> format->Bloss) << format->Bshift | format->Amask;
 }
 
+static Uint32 fast_SDL_ARGB888(Uint8 r, Uint8 g, Uint8 b)
+{
+    return (r << 16) | (g << 8) | b;
+}
+
 int main(int argc, char* argv[])
 {
     Verilated::commandArgs(argc, argv);
@@ -95,7 +100,7 @@ int main(int argc, char* argv[])
     int texture_access = SDL_TEXTUREACCESS_TARGET;
 #endif
 
-    Uint32 pixelFormatEnum = SDL_PIXELFORMAT_RGBA8888;
+    Uint32 pixelFormatEnum = SDL_PIXELFORMAT_ARGB8888;
     // pixelFormatEnum = info.texture_formats[0];
     SDL_PixelFormat *pixelFormat = SDL_AllocFormat(pixelFormatEnum);
     sdl_texture = SDL_CreateTexture(sdl_renderer, pixelFormatEnum,
@@ -157,7 +162,8 @@ int main(int argc, char* argv[])
                     p->r = top->o_sdl_r;
 #else
                     Uint32 *row = (Uint32 *)(pixels + y*pitch);
-                    row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+                    // row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+                    row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
 #endif
                     state = StateCopyingPixelData;
                 }
@@ -175,7 +181,8 @@ int main(int argc, char* argv[])
                     p->r = top->o_sdl_r;
 #else
                     Uint32 *row = (Uint32 *)(pixels + y*pitch);
-                    row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+                    // row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+                    row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
 #endif
                 } else if ((y == V_RES-1) && (x == H_RES)) {
                     SDL_UnlockTexture(sdl_texture);
