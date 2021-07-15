@@ -24,10 +24,22 @@ typedef struct Pixel {  // for SDL texture
     uint8_t a;  // transparency
 } Pixel;
 
-int main(int argc, char* argv[]) {
+uint64_t frame_count = 0;
+uint64_t fps_frame_count = 0;
+
+Uint32 fpsTimerCallbck(Uint32 interval, void *param)
+{
+    printf("FPS: %llu\n", fps_frame_count);
+    frame_count += fps_frame_count;
+    fps_frame_count = 0;
+    return interval;
+}
+
+int main(int argc, char* argv[])
+{
     Verilated::commandArgs(argc, argv);
 
-    if(SDL_Init(SDL_INIT_VIDEO) < 0) {
+    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
         printf("SDL init failed.\n");
         return 1;
     }
@@ -57,6 +69,16 @@ int main(int argc, char* argv[]) {
         fprintf(stderr, "Renderer creation failed: %s\n", SDL_GetError());
         return 1;
     }
+
+    SDL_RendererInfo info;
+    SDL_GetRendererInfo( sdl_renderer, &info );
+    printf("Renderer name: %s\n", info.name);
+    printf("Texture formats: \n");
+    for( Uint32 i = 0; i < info.num_texture_formats; i++ )
+    {
+        printf("  %s\n", SDL_GetPixelFormatName( info.texture_formats[i] ));
+    }
+
 
 #if USE_STREAMING
     printf("Using SDL_TEXTUREACCESS_STREAMING\n");
@@ -95,8 +117,9 @@ int main(int argc, char* argv[]) {
     uintptr_t pixels = 0;
     int pitch = 0;
 
-    uint64_t frame_count = 0;
     uint64_t start_ticks = SDL_GetPerformanceCounter();
+
+    SDL_AddTimer(1000, fpsTimerCallbck, NULL);
     while (state != StateDone) {
         // cycle the clock
         top->i_clk = 1;
@@ -154,7 +177,7 @@ int main(int argc, char* argv[]) {
                     SDL_RenderClear(sdl_renderer);
                     SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
                     SDL_RenderPresent(sdl_renderer);
-                    frame_count++;
+                    fps_frame_count++;
                     state = StateWaitingForStartOfFrame;
                 }
                 break;
@@ -254,7 +277,7 @@ int main(int argc, char* argv[]) {
             SDL_RenderClear(sdl_renderer);
             SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
             SDL_RenderPresent(sdl_renderer);
-            frame_count++;
+            fps_frame_count++;
         }
 #endif
     }
