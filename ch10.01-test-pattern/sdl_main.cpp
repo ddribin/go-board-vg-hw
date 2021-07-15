@@ -128,6 +128,13 @@ int main(int argc, char* argv[])
     top->i_clk = 0;
     top->eval();
 
+    while (!((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0))) {
+        top->i_clk = 1;
+        top->eval();
+        top->i_clk = 0;
+        top->eval();
+    }
+
     State state = StateWaitingForStartOfFrame;
     uintptr_t pixels = 0;
     int pitch = 0;
@@ -136,15 +143,46 @@ int main(int argc, char* argv[])
 
     SDL_AddTimer(1000, fpsTimerCallbck, NULL);
     while (state != StateDone) {
+        const int x = top->o_sdl_hpos;
+        const int y = top->o_sdl_vpos;
+#if USE_STREAMING && 0
+        if ((y == 0) && (x == 0)) {
+            int rc = SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
+            if (rc < 0) {
+                fprintf(stderr, "Unable to lock texture: %s\n", SDL_GetError());
+                exit(1);
+            }
+        }
+
+        if (top->o_sdl_visible) {
+            Uint32 *row = (Uint32 *)(pixels + y*pitch);
+            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+        }
+
+        if (y == V_RES && x == 0) {
+            SDL_Event e;
+            if (SDL_PollEvent(&e)) {
+                if (e.type == SDL_QUIT) {
+                    state = StateDone;
+                    break;
+                }
+            }
+
+            SDL_UnlockTexture(sdl_texture);
+            SDL_RenderClear(sdl_renderer);
+            SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
+            SDL_RenderPresent(sdl_renderer);
+            fps_frame_count++;
+            state = StateWaitingForStartOfFrame;
+        }
+#endif
         // cycle the clock
         top->i_clk = 1;
         top->eval();
         top->i_clk = 0;
         top->eval();
 
-        const int x = top->o_sdl_hpos;
-        const int y = top->o_sdl_vpos;
-#if USE_STREAMING
+#if USE_STREAMING && 1
         switch (state) {
             case StateWaitingForStartOfFrame: {
                 if ((x == 0) && (y == 0)) {
@@ -184,7 +222,10 @@ int main(int argc, char* argv[])
                     // row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
                     row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
 #endif
-                } else if ((y == V_RES-1) && (x == H_RES)) {
+                }
+                
+
+                if ((y == V_RES-1) && (x == H_RES)) {
                     SDL_UnlockTexture(sdl_texture);
                     state = StateVsync;
                 }
