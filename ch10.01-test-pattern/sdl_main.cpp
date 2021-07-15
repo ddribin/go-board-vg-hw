@@ -10,11 +10,12 @@
 const int H_RES = 640;
 const int V_RES = 480;
 
-struct Vsdl_top_adapter : public Vsdl_top
-{
-    void setClock(uint64_t clock) { i_clk = clock; }
-};
-using sdl_top = Vsdl_top;;
+typedef enum {
+    StateWaitingForStartOfFrame,
+    StateCopyingPixelData,
+    StateVsync,
+    StateDone,
+} State;
 
 typedef struct Pixel {  // for SDL texture
     uint8_t b;  // blue
@@ -90,16 +91,81 @@ int main(int argc, char* argv[]) {
     top->i_clk = 0;
     top->eval();
 
+    State state = StateWaitingForStartOfFrame;
+    uintptr_t pixels = 0;
+    int pitch = 0;
+
     uint64_t frame_count = 0;
     uint64_t start_ticks = SDL_GetPerformanceCounter();
-    while (1) {
+    while (state != StateDone) {
         // cycle the clock
         top->i_clk = 1;
         top->eval();
         top->i_clk = 0;
         top->eval();
 
+        const int x = top->o_sdl_hpos;
+        const int y = top->o_sdl_vpos;
 #if USE_STREAMING
+        switch (state) {
+            case StateWaitingForStartOfFrame: {
+                if ((x == 0) && (y == 0)) {
+                    int rc = SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
+                    if (rc < 0) {
+                        fprintf(stderr, "Unable to lock texture: %s\n", SDL_GetError());
+                        exit(1);
+                    }
+                    Pixel *row = (Pixel *)(pixels + y*pitch);
+                    Pixel *p = &row[x];
+                    p->a = 0xFF;
+                    p->b = top->o_sdl_b;
+                    p->g = top->o_sdl_g;
+                    p->r = top->o_sdl_r;
+                    state = StateCopyingPixelData;
+                }
+                break;
+            }
+
+            case StateCopyingPixelData: {
+                if (top->o_sdl_visible) {
+                    Pixel *row = (Pixel *)(pixels + y*pitch);
+                    Pixel *p = &row[x];
+                    p->a = 0xFF;
+                    p->b = top->o_sdl_b;
+                    p->g = top->o_sdl_g;
+                    p->r = top->o_sdl_r;
+                } else if ((y == V_RES-1) && (x == H_RES)) {
+                    SDL_UnlockTexture(sdl_texture);
+                    state = StateVsync;
+                }
+                break;
+            }
+
+            case StateVsync: {
+                if (y == V_RES && x == 0) {
+                    SDL_Event e;
+                    if (SDL_PollEvent(&e)) {
+                        if (e.type == SDL_QUIT) {
+                            state = StateDone;
+                            break;
+                        }
+                    }
+
+                    SDL_RenderClear(sdl_renderer);
+                    SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
+                    SDL_RenderPresent(sdl_renderer);
+                    frame_count++;
+                    state = StateWaitingForStartOfFrame;
+                }
+                break;
+            }
+
+            case StateDone:
+                break;
+        }
+#endif
+
+#if USE_STREAMING && 0
         if ((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0)) {
             uintptr_t pixels = 0;
             int pitch = 0;
@@ -132,6 +198,7 @@ int main(int argc, char* argv[]) {
         }
 #endif
 
+#if !USE_STREAMING
          if (top->o_sdl_visible) {
             Pixel* p = &screenbuffer[top->o_sdl_vpos*H_RES + top->o_sdl_hpos];
             p->a = 0xFF;
@@ -139,6 +206,7 @@ int main(int argc, char* argv[]) {
             p->g = top->o_sdl_g;
             p->r = top->o_sdl_r;
          }
+#endif
 
 #if 0
         if (top->o_sdl_visible) {
@@ -170,6 +238,8 @@ int main(int argc, char* argv[]) {
         }
 #endif
 
+#if !USE_STREAMING
+
         if (top->o_sdl_vpos == V_RES && top->o_sdl_hpos == 0) {
             SDL_Event e;
             if (SDL_PollEvent(&e)) {
@@ -186,6 +256,7 @@ int main(int argc, char* argv[]) {
             SDL_RenderPresent(sdl_renderer);
             frame_count++;
         }
+#endif
     }
     uint64_t end_ticks = SDL_GetPerformanceCounter();
     double duration = ((double)(end_ticks-start_ticks))/SDL_GetPerformanceFrequency();
