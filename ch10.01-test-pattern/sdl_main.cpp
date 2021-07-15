@@ -3,7 +3,7 @@
 #include <verilated.h>
 #include "Vsdl_top.h"
 
-#define USE_VSYNC 1
+#define USE_VSYNC 0
 #define USE_STREAMING 1
 
 // screen dimensions
@@ -33,6 +33,13 @@ Uint32 fpsTimerCallbck(Uint32 interval, void *param)
     frame_count += fps_frame_count;
     fps_frame_count = 0;
     return interval;
+}
+
+static Uint32 fast_SDL_MapRGB(const SDL_PixelFormat * format, Uint8 r, Uint8 g, Uint8 b)
+{
+    return (r >> format->Rloss) << format->Rshift
+        | (g >> format->Gloss) << format->Gshift
+        | (b >> format->Bloss) << format->Bshift | format->Amask;
 }
 
 int main(int argc, char* argv[])
@@ -88,7 +95,10 @@ int main(int argc, char* argv[])
     int texture_access = SDL_TEXTUREACCESS_TARGET;
 #endif
 
-    sdl_texture = SDL_CreateTexture(sdl_renderer, SDL_PIXELFORMAT_ARGB8888,
+    Uint32 pixelFormatEnum = SDL_PIXELFORMAT_RGBA8888;
+    // pixelFormatEnum = info.texture_formats[0];
+    SDL_PixelFormat *pixelFormat = SDL_AllocFormat(pixelFormatEnum);
+    sdl_texture = SDL_CreateTexture(sdl_renderer, pixelFormatEnum,
         texture_access, H_RES, V_RES);
     if (!sdl_texture) {
         fprintf(stderr, "Texture creation failed: %s\n", SDL_GetError());
@@ -138,12 +148,17 @@ int main(int argc, char* argv[])
                         fprintf(stderr, "Unable to lock texture: %s\n", SDL_GetError());
                         exit(1);
                     }
+#if 0
                     Pixel *row = (Pixel *)(pixels + y*pitch);
                     Pixel *p = &row[x];
                     p->a = 0xFF;
                     p->b = top->o_sdl_b;
                     p->g = top->o_sdl_g;
                     p->r = top->o_sdl_r;
+#else
+                    Uint32 *row = (Uint32 *)(pixels + y*pitch);
+                    row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+#endif
                     state = StateCopyingPixelData;
                 }
                 break;
@@ -151,12 +166,17 @@ int main(int argc, char* argv[])
 
             case StateCopyingPixelData: {
                 if (top->o_sdl_visible) {
+#if 0
                     Pixel *row = (Pixel *)(pixels + y*pitch);
                     Pixel *p = &row[x];
                     p->a = 0xFF;
                     p->b = top->o_sdl_b;
                     p->g = top->o_sdl_g;
                     p->r = top->o_sdl_r;
+#else
+                    Uint32 *row = (Uint32 *)(pixels + y*pitch);
+                    row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+#endif
                 } else if ((y == V_RES-1) && (x == H_RES)) {
                     SDL_UnlockTexture(sdl_texture);
                     state = StateVsync;
