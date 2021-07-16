@@ -62,32 +62,11 @@ int main(int argc, char* argv[])
         return 1;
     }
 
-    SDL_RendererInfo info;
-    SDL_GetRendererInfo( sdl_renderer, &info );
-    printf("Renderer name: %s\n", info.name);
-    printf("Texture formats: \n");
-    for( Uint32 i = 0; i < info.num_texture_formats; i++ )
-    {
-        printf("  %s\n", SDL_GetPixelFormatName( info.texture_formats[i] ));
-    }
-
     Uint32 pixelFormatEnum = SDL_PIXELFORMAT_ARGB8888;
     SDL_Texture *sdl_texture = SDL_CreateTexture(sdl_renderer, pixelFormatEnum, SDL_TEXTUREACCESS_STREAMING, H_RES, V_RES);
     if (!sdl_texture) {
         fprintf(stderr, "Texture creation failed: %s\n", SDL_GetError());
         return 1;
-    }
-
-    Uint32 queiredFormat = 0;
-    int queriedWidth = 0;
-    int queriedHeight = 0; 
-    if (SDL_QueryTexture(sdl_texture, &queiredFormat, NULL, &queriedWidth, &queriedHeight) == 0) {
-        printf("Texture format: %s, width: %d, height: %d\n", SDL_GetPixelFormatName(queiredFormat), queriedWidth, queriedHeight);
-    }
-
-    Uint32 windowPixelFormat = SDL_GetWindowPixelFormat(sdl_window);
-    if (windowPixelFormat != pixelFormatEnum) {
-        fprintf(stderr, "Window pixel format differs from render pixel format: %s\n", SDL_GetPixelFormatName(windowPixelFormat));
     }
 
     // initialize Verilog module
@@ -96,6 +75,7 @@ int main(int argc, char* argv[])
     top->i_clk = 0;
     top->eval();
 
+    // Run until position is (0, 0)
     while (!((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0))) {
         top->i_clk = 1;
         top->eval();
