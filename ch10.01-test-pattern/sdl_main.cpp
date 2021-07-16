@@ -235,11 +235,7 @@ int main(int argc, char* argv[])
 
 #if USE_STREAMING && 0
         if ((y == 0) && (x == 0)) {
-            int rc = SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-            if (rc < 0) {
-                fprintf(stderr, "Unable to lock texture: %s\n", SDL_GetError());
-                exit(1);
-            }
+            SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
         }
 
         if (top->o_sdl_visible) {
@@ -264,11 +260,39 @@ int main(int argc, char* argv[])
             state = StateWaitingForStartOfFrame;
         }
 #endif
-        // cycle the clock
-        top->i_clk = 1;
-        top->eval();
-        top->i_clk = 0;
-        top->eval();
+
+#if USE_STREAMING && 0
+        if ((state == StateWaitingForStartOfFrame) && ((x == 0) && (y == 0))) {
+            SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
+            Uint32 *row = (Uint32 *)(pixels + y*pitch);
+            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+            state = StateCopyingPixelData;
+        } else if ((state == StateCopyingPixelData) && top->o_sdl_visible) {
+            Uint32 *row = (Uint32 *)(pixels + y*pitch);
+            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
+
+            if ((y == V_RES-1) && (x == H_RES)) {
+                SDL_UnlockTexture(sdl_texture);
+                pixels = 0;
+                pitch = 0;
+                state = StateVsync;
+            }
+        } else if ((state == StateVsync) &&  (y == V_RES && x == 0)) {
+            SDL_Event e;
+            if (SDL_PollEvent(&e)) {
+                if (e.type == SDL_QUIT) {
+                    state = StateDone;
+                    break;
+                }
+            }
+
+            SDL_RenderClear(sdl_renderer);
+            SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
+            SDL_RenderPresent(sdl_renderer);
+            fps_frame_count++;
+            state = StateWaitingForStartOfFrame;
+        }
+#endif
 
 #if USE_STREAMING && 1
         switch (state) {
@@ -319,8 +343,6 @@ int main(int argc, char* argv[])
 
                 if ((y == V_RES-1) && (x == H_RES)) {
                     SDL_UnlockTexture(sdl_texture);
-                    pixels = 0;
-                    pitch = 0;
                     state = StateVsync;
                 }
                 break;
@@ -349,6 +371,12 @@ int main(int argc, char* argv[])
                 break;
         }
 #endif
+
+        // cycle the clock
+        top->i_clk = 1;
+        top->eval();
+        top->i_clk = 0;
+        top->eval();
 
 #if USE_STREAMING && 0
         if ((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0)) {
