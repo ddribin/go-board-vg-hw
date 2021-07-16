@@ -128,14 +128,6 @@ int main(int argc, char* argv[])
     top->i_clk = 0;
     top->eval();
 
-    while (!((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0))) {
-        top->i_clk = 1;
-        top->eval();
-        top->i_clk = 0;
-        top->eval();
-    }
-    // printf("x: %d, y: %d, v: %d\n", top->o_sdl_hpos, top->o_sdl_vpos, top->o_sdl_visible);
-
     State state = StateWaitingForStartOfFrame;
     uintptr_t pixels = 0;
     int pitch = 0;
@@ -144,169 +136,23 @@ int main(int argc, char* argv[])
 
     SDL_AddTimer(1000, fpsTimerCallbck, NULL);
     while (state != StateDone) {
+        // cycle the clock
+        top->i_clk = 1;
+        top->eval();
+        top->i_clk = 0;
+        top->eval();
+
         const int x = top->o_sdl_hpos;
         const int y = top->o_sdl_vpos;
-
-#if USE_STREAMING && 0
-    if (top->o_firstLine && top->o_startOfLine) {
-        SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-    } else 
-    if (top->o_vsyncLine && top->o_startOfLine) {
-        SDL_Event e;
-        if (SDL_PollEvent(&e)) {
-            if (e.type == SDL_QUIT) {
-                state = StateDone;
-                break;
-            }
-        }
-
-        SDL_UnlockTexture(sdl_texture);
-        SDL_RenderClear(sdl_renderer);
-        SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
-        SDL_RenderPresent(sdl_renderer);
-        fps_frame_count++;
-    }
-
-    if (top->o_sdl_visible) {
-        Uint32 *row = (Uint32 *)(pixels + y*pitch);
-        row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
-    }
-#endif
-
-#if USE_STREAMING && 0
-#if 0
-        uint8_t startOfLine = (x == 0)? 1 : 0;
-        uint8_t firstLine = (y == 0)? 1 : 0;
-        uint8_t vsyncLine = (y == V_RES)? 1 : 0;
-        uint8_t visible = (top->o_sdl_visible)? 1 : 0;
-        uint8_t bitState = visible << 3 | vsyncLine << 2 | firstLine << 1 | startOfLine;
-#else
-        uint8_t bitState = top->o_bit_state;
-#endif
-#if 0
-        printf("bitState: 0b");
-        uint8_t n = bitState;
-        for (int b = 0; b < 4; b++) {
-            if (n & 1)
-                printf("1");
-            else
-                printf("0");
-            n >>= 1;
-        }
-        printf(" (0x%x) x: %d, y: %d\n", bitState, x, y);
-
-        //  0x%x\n", bitState);
-#endif
-        switch (bitState) {
-            case 0b1011: {
-                SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-                // Fall through
-            }
-
-            case 0b1010:
-            case 0b1001:
-            case 0b1000: {
-                Uint32 *row = (Uint32 *)(pixels + y*pitch);
-                row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
-                break;
-            }
-
-            case 0b0101: {
-                SDL_Event e;
-                if (SDL_PollEvent(&e)) {
-                    if (e.type == SDL_QUIT) {
-                        state = StateDone;
-                        break;
-                    }
-                }
-
-                SDL_UnlockTexture(sdl_texture);
-                SDL_RenderClear(sdl_renderer);
-                SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
-                SDL_RenderPresent(sdl_renderer);
-                fps_frame_count++;
-                break;
-            }
-
-            default:
-                break;
-        }
-#endif
-
-#if USE_STREAMING && 0
-        if ((y == 0) && (x == 0)) {
-            SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-        }
-
-        if (top->o_sdl_visible) {
-            Uint32 *row = (Uint32 *)(pixels + y*pitch);
-            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
-        }
-
-        if (y == V_RES && x == 0) {
-            SDL_Event e;
-            if (SDL_PollEvent(&e)) {
-                if (e.type == SDL_QUIT) {
-                    state = StateDone;
-                    break;
-                }
-            }
-
-            SDL_UnlockTexture(sdl_texture);
-            SDL_RenderClear(sdl_renderer);
-            SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
-            SDL_RenderPresent(sdl_renderer);
-            fps_frame_count++;
-            state = StateWaitingForStartOfFrame;
-        }
-#endif
-
-#if USE_STREAMING && 0
-        if ((state == StateWaitingForStartOfFrame) && ((x == 0) && (y == 0))) {
-            SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-            Uint32 *row = (Uint32 *)(pixels + y*pitch);
-            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
-            state = StateCopyingPixelData;
-        } else if ((state == StateCopyingPixelData) && top->o_sdl_visible) {
-            Uint32 *row = (Uint32 *)(pixels + y*pitch);
-            row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
-
-            if ((y == V_RES-1) && (x == H_RES)) {
-                SDL_UnlockTexture(sdl_texture);
-                pixels = 0;
-                pitch = 0;
-                state = StateVsync;
-            }
-        } else if ((state == StateVsync) &&  (y == V_RES && x == 0)) {
-            SDL_Event e;
-            if (SDL_PollEvent(&e)) {
-                if (e.type == SDL_QUIT) {
-                    state = StateDone;
-                    break;
-                }
-            }
-
-            SDL_RenderClear(sdl_renderer);
-            SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
-            SDL_RenderPresent(sdl_renderer);
-            fps_frame_count++;
-            state = StateWaitingForStartOfFrame;
-        }
-#endif
-
-#if USE_STREAMING && 1
+#if USE_STREAMING
         switch (state) {
             case StateWaitingForStartOfFrame: {
                 if ((x == 0) && (y == 0)) {
-#if 0
                     int rc = SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
                     if (rc < 0) {
                         fprintf(stderr, "Unable to lock texture: %s\n", SDL_GetError());
                         exit(1);
                     }
-#else
-                    SDL_LockTexture(sdl_texture, NULL, (void **)&pixels, &pitch);
-#endif
 #if 0
                     Pixel *row = (Pixel *)(pixels + y*pitch);
                     Pixel *p = &row[x];
@@ -314,7 +160,7 @@ int main(int argc, char* argv[])
                     p->b = top->o_sdl_b;
                     p->g = top->o_sdl_g;
                     p->r = top->o_sdl_r;
-#elif 1
+#else
                     Uint32 *row = (Uint32 *)(pixels + y*pitch);
                     // row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
                     row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
@@ -338,10 +184,7 @@ int main(int argc, char* argv[])
                     // row[x] = fast_SDL_MapRGB(pixelFormat, top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
                     row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
 #endif
-                }
-                
-
-                if ((y == V_RES-1) && (x == H_RES)) {
+                } else if ((y == V_RES-1) && (x == H_RES)) {
                     SDL_UnlockTexture(sdl_texture);
                     state = StateVsync;
                 }
@@ -371,12 +214,6 @@ int main(int argc, char* argv[])
                 break;
         }
 #endif
-
-        // cycle the clock
-        top->i_clk = 1;
-        top->eval();
-        top->i_clk = 0;
-        top->eval();
 
 #if USE_STREAMING && 0
         if ((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0)) {
