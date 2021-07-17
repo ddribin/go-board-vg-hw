@@ -18,17 +18,6 @@ typedef enum {
     StateDone,
 } State;
 
-static uint64_t frame_count = 0;
-static uint64_t fps_frame_count = 0;
-
-static Uint32 fpsTimerCallbck(Uint32 interval, void *param)
-{
-    printf("FPS: %llu\n", fps_frame_count);
-    frame_count += fps_frame_count;
-    fps_frame_count = 0;
-    return interval;
-}
-
 static Uint32 fast_SDL_ARGB888(Uint8 r, Uint8 g, Uint8 b)
 {
     return (r << 16) | (g << 8) | b;
@@ -47,7 +36,7 @@ int main(int argc, char* argv[])
     Verilated::commandArgs(argc, argv);
 
     /* Enable standard application logging */
-    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
+    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_DEBUG);
     SDLWindowContainer window_container(H_RES, V_RES);
     window_container.set_use_vsync(USE_VSYNC);
 
@@ -72,9 +61,7 @@ int main(int argc, char* argv[])
     uintptr_t pixels = 0;
     int pitch = 0;
 
-    uint64_t start_ticks = SDL_GetPerformanceCounter();
-
-    SDL_AddTimer(1000, fpsTimerCallbck, NULL);
+    window_container.StartFPSTimer();
     while (state != StateDone) {
         const int x = top->o_sdl_hpos;
         const int y = top->o_sdl_vpos;
@@ -112,7 +99,6 @@ int main(int argc, char* argv[])
                     }
 
                     window_container.RenderFrame();
-                    fps_frame_count++;
                     state = StateWaitingForStartOfFrame;
                 }
                 break;
@@ -124,13 +110,10 @@ int main(int argc, char* argv[])
 
         tick(top);
     }
-    uint64_t end_ticks = SDL_GetPerformanceCounter();
-    double duration = ((double)(end_ticks-start_ticks))/SDL_GetPerformanceFrequency();
-    double fps = (double)frame_count/duration;
-    printf("Frames per second: %.1f\n", fps);
+    window_container.StopFPSTimer();
 
     top->final();
-
     window_container.Destroy();
+    
     return 0;
 }
