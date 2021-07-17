@@ -3,8 +3,8 @@
 #project files
 
 add_file -verilog -lib work "../test_pattern.v" 
-add_file -verilog -lib work "../test_pattern_top.v" 
 add_file -verilog -lib work "../../common/rtl/video_sync_generator.v" 
+add_file -verilog -lib work "../test_pattern_vga_top.v" 
 #implementation: "test_pattern_Implmnt"
 impl -add test_pattern_Implmnt -type fpga
 

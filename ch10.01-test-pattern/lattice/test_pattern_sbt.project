@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2020.12.27943 - Bui
 ProjectName=test_pattern
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=../test_pattern.v=work,../test_pattern_top.v=work,../../common/rtl/video_sync_generator.v=work
+ProjectVFiles=../test_pattern.v=work,../../common/rtl/video_sync_generator.v=work,../test_pattern_vga_top.v
 ProjectCFiles=
 CurImplementation=test_pattern_Implmnt
 Implementations=test_pattern_Implmnt

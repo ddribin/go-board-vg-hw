@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <SDL.h>
 #include <verilated.h>
-#include "Vsdl_top.h"
+#include "Vtest_pattern_sdl_top.h"
 #include "sdl_window_container.h"
 
 #define USE_VSYNC 0
 #define USE_STREAMING 1
 
 // screen dimensions
-const int H_RES = 640;
-const int V_RES = 480;
+static const int H_RES = 640;
+static const int V_RES = 480;
 
 typedef enum {
     StateWaitingForStartOfFrame,
@@ -23,7 +23,7 @@ static Uint32 fast_SDL_ARGB888(Uint8 r, Uint8 g, Uint8 b)
     return (r << 16) | (g << 8) | b;
 }
 
-static void tick(Vsdl_top *top)
+static void tick(Vtest_pattern_sdl_top *top)
 {
     top->i_clk = 1;
     top->eval();
@@ -47,7 +47,7 @@ int main(int argc, char* argv[])
     SDL_Texture *sdl_texture = window_container.texture();
 
     // initialize Verilog module
-    Vsdl_top* top = new Vsdl_top();
+    Vtest_pattern_sdl_top* top = new Vtest_pattern_sdl_top();
 
     top->i_clk = 0;
     top->eval();
