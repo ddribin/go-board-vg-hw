@@ -37,7 +37,7 @@ int main(int argc, char* argv[])
 
     /* Enable standard application logging */
     SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_DEBUG);
-    SDLWindowContainer window_container(H_RES, V_RES);
+    SDLWindowContainer window_container(H_RES*2, V_RES*2, H_RES, V_RES);
     window_container.set_use_vsync(USE_VSYNC);
 
     int result = window_container.Initialize();

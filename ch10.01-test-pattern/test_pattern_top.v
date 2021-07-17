@@ -9,18 +9,27 @@ module test_pattern_top (
   output wire [2:0]   o_vga_b
 );
   
-  wire [7:0] w_vga_r;
-  wire [7:0] w_vga_g;
-  wire [7:0] w_vga_b;
-  test_pattern test_pattern (
+  wire [9:0]  w_hpos;
+  wire [9:0]  w_vpos;
+  wire        w_visible;
+  video_sync_generator sync_gen (
     .i_clk(i_clk),
     .o_hsync(o_vga_hsync),
     .o_hblank(),
     .o_vsync(o_vga_vsync),
     .o_vblank(),
-    .o_hpos(),
-    .o_vpos(),
-    .o_visible(),
+    .o_hpos(w_hpos),
+    .o_vpos(w_vpos),
+    .o_visible(w_visible)
+  );
+
+  wire [7:0] w_vga_r;
+  wire [7:0] w_vga_g;
+  wire [7:0] w_vga_b;
+  test_pattern test_pattern (
+    .i_hpos(w_hpos),
+    .i_vpos(w_vpos),
+    .i_visible(w_visible),
     .o_r(w_vga_r),
     .o_g(w_vga_g),
     .o_b(w_vga_b)
