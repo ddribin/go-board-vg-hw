@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <verilated.h>
 #include "Vsdl_top.h"
+#include "sdl_window_container.h"
 
 #define USE_VSYNC 0
 #define USE_STREAMING 1
@@ -33,41 +34,28 @@ static Uint32 fast_SDL_ARGB888(Uint8 r, Uint8 g, Uint8 b)
     return (r << 16) | (g << 8) | b;
 }
 
+static void tick(Vsdl_top *top)
+{
+    top->i_clk = 1;
+    top->eval();
+    top->i_clk = 0;
+    top->eval();
+}
+
 int main(int argc, char* argv[])
 {
     Verilated::commandArgs(argc, argv);
 
-    if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) < 0) {
-        fprintf(stderr, "SDL init failed.\n");
-        return 1;
-    }
+    /* Enable standard application logging */
+    SDL_LogSetPriority(SDL_LOG_CATEGORY_APPLICATION, SDL_LOG_PRIORITY_INFO);
+    SDLWindowContainer window_container(H_RES, V_RES);
+    window_container.set_use_vsync(USE_VSYNC);
 
-    SDL_Window *sdl_window = SDL_CreateWindow("Test Pattern", SDL_WINDOWPOS_CENTERED,
-        SDL_WINDOWPOS_CENTERED, H_RES, V_RES, SDL_WINDOW_SHOWN);
-    if (!sdl_window) {
-        fprintf(stderr, "Window creation failed: %s\n", SDL_GetError());
-        return 1;
+    int result = window_container.Initialize();
+    if (result != 0) {
+        return result;
     }
-
-    Uint32 render_flags = SDL_RENDERER_ACCELERATED;
-#if USE_VSYNC
-    printf("Using vsync\n");
-    render_flags |= SDL_RENDERER_PRESENTVSYNC;
-#else
-    printf("Not using vsync\n");
-#endif
-    SDL_Renderer *sdl_renderer = SDL_CreateRenderer(sdl_window, -1, render_flags);
-    if (!sdl_renderer) {
-        fprintf(stderr, "Renderer creation failed: %s\n", SDL_GetError());
-        return 1;
-    }
-
-    Uint32 pixelFormatEnum = SDL_PIXELFORMAT_ARGB8888;
-    SDL_Texture *sdl_texture = SDL_CreateTexture(sdl_renderer, pixelFormatEnum, SDL_TEXTUREACCESS_STREAMING, H_RES, V_RES);
-    if (!sdl_texture) {
-        fprintf(stderr, "Texture creation failed: %s\n", SDL_GetError());
-        return 1;
-    }
+    SDL_Texture *sdl_texture = window_container.texture();
 
     // initialize Verilog module
     Vsdl_top* top = new Vsdl_top();
@@ -77,10 +65,7 @@ int main(int argc, char* argv[])
 
     // Run until position is (0, 0)
     while (!((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0))) {
-        top->i_clk = 1;
-        top->eval();
-        top->i_clk = 0;
-        top->eval();
+        tick(top);
     }
 
     State state = StateWaitingForStartOfFrame;
@@ -110,6 +95,7 @@ int main(int argc, char* argv[])
                     Uint32 *row = (Uint32 *)(pixels + y*pitch);
                     row[x] = fast_SDL_ARGB888(top->o_sdl_r, top->o_sdl_g, top->o_sdl_b);
                 } else if ((y == V_RES-1) && (x == H_RES)) {
+                    SDL_UnlockTexture(sdl_texture);
                     state = StateVsync;
                 }
                 break;
@@ -125,10 +111,7 @@ int main(int argc, char* argv[])
                         }
                     }
 
-                    SDL_UnlockTexture(sdl_texture);
-                    SDL_RenderClear(sdl_renderer);
-                    SDL_RenderCopy(sdl_renderer, sdl_texture, NULL, NULL);
-                    SDL_RenderPresent(sdl_renderer);
+                    window_container.RenderFrame();
                     fps_frame_count++;
                     state = StateWaitingForStartOfFrame;
                 }
@@ -139,11 +122,7 @@ int main(int argc, char* argv[])
                 break;
         }
 
-        // cycle the clock
-        top->i_clk = 1;
-        top->eval();
-        top->i_clk = 0;
-        top->eval();
+        tick(top);
     }
     uint64_t end_ticks = SDL_GetPerformanceCounter();
     double duration = ((double)(end_ticks-start_ticks))/SDL_GetPerformanceFrequency();
@@ -152,9 +131,6 @@ int main(int argc, char* argv[])
 
     top->final();
 
-    SDL_DestroyTexture(sdl_texture);
-    SDL_DestroyRenderer(sdl_renderer);
-    SDL_DestroyWindow(sdl_window);
-    SDL_Quit();
+    window_container.Destroy();
     return 0;
 }
