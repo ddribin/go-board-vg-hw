@@ -1,13 +1,13 @@
 set(BASE_NAME bitmapped_digits)
 
-# set(LIB_TARGET_NAME ${BASE_NAME}_lib)
-# add_library(${BASE_NAME}_library STATIC)
-# target_compile_features(${BASE_NAME}_library PUBLIC cxx_std_11)
-# verilatest_setup(${BASE_NAME}_library)
+set(LIB_TARGET_NAME ${BASE_NAME}_lib)
+add_library(${LIB_TARGET_NAME} STATIC)
+target_compile_features(${LIB_TARGET_NAME} PUBLIC cxx_std_11)
+verilatest_setup(${LIB_TARGET_NAME})
 
-# verilate(${BASE_NAME}-library SOURCES ${BASE_NAME}_vga_top.v
-#     INCLUDE_DIRS ${COMMON_RTL_DIR}
-# )
+verilate(${LIB_TARGET_NAME} SOURCES ${BASE_NAME}_vga_top.v
+    INCLUDE_DIRS ${COMMON_RTL_DIR}
+)
 
 set(SDL_TARGET_NAME ${BASE_NAME}_sdl)
 add_executable(${SDL_TARGET_NAME} ${BASE_NAME}_sdl_main.cpp)
