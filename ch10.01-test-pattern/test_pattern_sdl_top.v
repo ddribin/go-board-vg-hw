@@ -1,6 +1,6 @@
 `default_nettype none
 
-module sdl_top (
+module test_pattern_sdl_top (
   input wire          i_clk,
   output wire [9:0]   o_sdl_hpos,
   output wire [9:0]   o_sdl_vpos,

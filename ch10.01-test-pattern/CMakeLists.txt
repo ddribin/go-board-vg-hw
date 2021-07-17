@@ -1,19 +1,21 @@
-set(BASE_NAME test-pattern)
+set(BASE_NAME test_pattern)
 
-add_library(${BASE_NAME}-library STATIC)
-target_compile_features(${BASE_NAME}-library PUBLIC cxx_std_11)
-verilatest_setup(${BASE_NAME}-library)
+set(LIB_TARGET_NAME ${BASE_NAME}_library)
+add_library(${LIB_TARGET_NAME} STATIC)
+target_compile_features(${LIB_TARGET_NAME} PUBLIC cxx_std_11)
+verilatest_setup(${LIB_TARGET_NAME})
 
-verilate(${BASE_NAME}-library SOURCES test_pattern_vga_top.v
+verilate(${LIB_TARGET_NAME} SOURCES test_pattern_vga_top.v
     INCLUDE_DIRS ${COMMON_RTL_DIR}
 )
 
-add_executable(${BASE_NAME}-sdl test_pattern_sdl_main.cpp)
-verilate(${BASE_NAME}-sdl SOURCES test_pattern_sdl_top.v
+set(SDL_TARGET_NAME ${BASE_NAME}_sdl)
+add_executable(${SDL_TARGET_NAME} test_pattern_sdl_main.cpp)
+verilate(${SDL_TARGET_NAME} SOURCES test_pattern_sdl_top.v
     INCLUDE_DIRS ${COMMON_RTL_DIR}
 )
-target_include_directories(${BASE_NAME}-sdl PRIVATE ${PROJECT_SOURCE_DIR}/common/src)
-target_link_libraries(${BASE_NAME}-sdl PRIVATE SDL2::Main)
-target_compile_definitions(${BASE_NAME}-sdl PRIVATE VERILATEST_TRACE=0)
+target_include_directories(${SDL_TARGET_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/common/src)
+target_link_libraries(${SDL_TARGET_NAME} PRIVATE SDL2::Main)
+target_compile_definitions(${SDL_TARGET_NAME} PRIVATE VERILATEST_TRACE=0)
 
-verilatest_setup(${BASE_NAME}-sdl)
+verilatest_setup(${SDL_TARGET_NAME})
