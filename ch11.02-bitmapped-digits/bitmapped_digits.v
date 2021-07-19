@@ -18,7 +18,7 @@ module bitmapped_digits (
   // combine {digit,yofs} into single ROM address
   wire [6:0] address = {digit,yofs};
   
-  always @(*)
+  always @(*) begin
     case (address)/*{w:5,h:5,count:10}*/
       7'o00: bits = 8'b11111;
       7'o01: bits = 8'b10001;
@@ -82,12 +82,32 @@ module bitmapped_digits (
 
       default: bits = 0;
     endcase
-  
-  wire r = i_visible && 0;
+  end
+
+  reg [7:0] pal_r;
+  reg [7:0] pal_g;
+  reg [7:0] pal_b;
+  reg [23:0] pal_col;
+
+  wire [2:0] pal_idx = digit[2:0];
+  always @(*) begin
+    case (pal_idx)
+      3'd0: pal_col = 24'hff_00_00;
+      3'd1: pal_col = 24'hff_a5_00;
+      3'd2: pal_col = 24'hff_ff_00;
+      3'd3: pal_col = 24'h00_80_00;
+      3'd4: pal_col = 24'h00_00_ff;
+      3'd5: pal_col = 24'h4b_00_82;
+      3'd6: pal_col = 24'hee_8e_ee;
+      3'd7: pal_col = 24'hff_ff_ff;
+    endcase
+  end
+
+  wire r = i_visible && bits[~xofs];
   wire g = i_visible && bits[~xofs];
-  wire b = i_visible && 0;
-  assign o_r = r? 8'hFF : 8'h 00;
-  assign o_g = g? 8'hFF : 8'h 00;
-  assign o_b = b? 8'hFF : 8'h 00;
+  wire b = i_visible && bits[~xofs];
+  assign o_r = r? pal_col[23:16] : 8'h 00;
+  assign o_g = g? pal_col[15:8] : 8'h 00;
+  assign o_b = b? pal_col[7:0] : 8'h 00;
 
 endmodule
