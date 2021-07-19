@@ -22,9 +22,6 @@ module bitmapped_file (
   end
   wire [7:0] bits = bitarray[address];
 
-  reg [7:0] pal_r;
-  reg [7:0] pal_g;
-  reg [7:0] pal_b;
   reg [23:0] pal_col;
 
   wire [2:0] pal_idx = digit[2:0];
