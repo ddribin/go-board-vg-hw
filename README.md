@@ -1,3 +1,1 @@
-# Go Board Fun
-
-Fun Projects for the [Nandland](https://www.nandland.com/) [Go Board](https://www.nandland.com/goboard/index.html).
+Projects from the book ["Designing Video Game Hardware in Verilog"]( https://8bitworkshop.com) ported to the [Nandland](https://www.nandland.com/) [Go Board](https://www.nandland.com/goboard/index.html).
