@@ -16,6 +16,5 @@ verilate(${SDL_TARGET_NAME} SOURCES ${BASE_NAME}_sdl_top.v
 )
 target_include_directories(${SDL_TARGET_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/common/src)
 target_link_libraries(${SDL_TARGET_NAME} PRIVATE SDL2::Main)
-target_compile_definitions(${SDL_TARGET_NAME} PRIVATE VERILATEST_TRACE=0)
 
 verilatest_setup(${SDL_TARGET_NAME})
