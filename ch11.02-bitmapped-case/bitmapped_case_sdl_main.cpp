@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <SDL.h>
 #include <verilated.h>
-#include "Vbitmapped_digits_sdl_top.h"
+#include "Vbitmapped_case_sdl_top.h"
 #include "sdl_window_container.h"
 
-using TopModule = Vbitmapped_digits_sdl_top;
+using TopModule = Vbitmapped_case_sdl_top;
 
 #define USE_VSYNC 0
 #define USE_STREAMING 1

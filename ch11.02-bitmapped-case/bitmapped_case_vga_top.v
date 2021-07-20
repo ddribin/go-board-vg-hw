@@ -1,6 +1,6 @@
 `default_nettype none
 
-module bitmapped_digits_vga_top (
+module bitmapped_case_vga_top (
   input wire          i_clk,
   output wire         o_vga_hsync,
   output wire         o_vga_vsync,
@@ -26,7 +26,7 @@ module bitmapped_digits_vga_top (
   wire [7:0] w_vga_r;
   wire [7:0] w_vga_g;
   wire [7:0] w_vga_b;
-  bitmapped_digits bitmapped_digits (
+  bitmapped_case bitmapped_case (
     .i_hpos(w_hpos),
     .i_vpos(w_vpos),
     .i_visible(w_visible),

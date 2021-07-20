@@ -1,6 +1,6 @@
 `default_nettype none
 
-module bitmapped_digits (
+module bitmapped_case (
   input wire [9:0]    i_hpos,
   input wire [9:0]    i_vpos,
   input wire          i_visible,

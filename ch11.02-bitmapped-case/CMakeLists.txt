@@ -1,4 +1,4 @@
-set(BASE_NAME bitmapped_digits)
+set(BASE_NAME bitmapped_case)
 
 set(LIB_TARGET_NAME ${BASE_NAME}_lib)
 add_library(${LIB_TARGET_NAME} STATIC)

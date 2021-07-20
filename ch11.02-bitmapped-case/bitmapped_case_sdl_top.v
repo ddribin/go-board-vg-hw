@@ -1,6 +1,6 @@
 `default_nettype none
 
-module bitmapped_digits_sdl_top (
+module bitmapped_case_sdl_top (
   input wire          i_clk,
   output wire [9:0]   o_sdl_hpos,
   output wire [9:0]   o_sdl_vpos,
@@ -21,7 +21,7 @@ module bitmapped_digits_sdl_top (
     .o_visible(o_sdl_visible)
   );
 
-  bitmapped_digits bitmapped_digits (
+  bitmapped_case bitmapped_case (
     .i_hpos(o_sdl_hpos),
     .i_vpos(o_sdl_vpos),
     .i_visible(o_sdl_visible),
