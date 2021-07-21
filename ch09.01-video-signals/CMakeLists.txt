@@ -1,4 +1,4 @@
-set(BASE_NAME video-signals)
+set(BASE_NAME video_signals)
 
 set(LIB_TARGET_NAME ${BASE_NAME}_lib)
 add_library(${LIB_TARGET_NAME} STATIC)
