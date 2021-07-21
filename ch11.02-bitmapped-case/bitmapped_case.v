@@ -84,9 +84,6 @@ module bitmapped_case (
     endcase
   end
 
-  reg [7:0] pal_r;
-  reg [7:0] pal_g;
-  reg [7:0] pal_b;
   reg [23:0] pal_col;
 
   wire [2:0] pal_idx = digit[2:0];
