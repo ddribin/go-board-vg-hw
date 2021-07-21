@@ -22,6 +22,25 @@ function(test_setup TARGET_NAME)
     catch_discover_tests(${TARGET_NAME})
 endfunction()
 
+function(add_verilator_vga_library TARGET_NAME)
+    set(VGA_TARGET_NAME ${BASE_NAME}_vga)
+    add_library(${VGA_TARGET_NAME} STATIC)
+    verilate(${VGA_TARGET_NAME} SOURCES ${BASE_NAME}_vga_top.v
+        INCLUDE_DIRS ${COMMON_RTL_DIR}
+    )
+endfunction()
+
+function(add_verilator_sdl_executable TARGET_NAME)
+    add_executable(${TARGET_NAME} ${BASE_NAME}_sdl_main.cpp)
+    verilate(${TARGET_NAME} SOURCES ${BASE_NAME}_sdl_top.v
+        INCLUDE_DIRS ${COMMON_RTL_DIR}
+    )
+    target_include_directories(${TARGET_NAME} PRIVATE ${PROJECT_SOURCE_DIR}/common/src)
+    target_link_libraries(${TARGET_NAME} PRIVATE SDL2::Main)
+
+    verilatest_setup(${TARGET_NAME})
+endfunction()
+
 add_subdirectory(verilatest)
 add_subdirectory(ch09.01-video-signals)
 add_subdirectory(ch10.01-test-pattern)
