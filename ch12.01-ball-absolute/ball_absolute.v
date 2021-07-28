@@ -8,16 +8,16 @@ module ball_absolute(
   input wire          hsync,
   input wire          vsync,
   input wire          display_on,
-  input wire [8:0]    hpos,
-  input wire [8:0]    vpos,
+  input wire [9:0]    hpos,
+  input wire [9:0]    vpos,
   output wire [2:0]   rgb
 );
   
-  reg [8:0] ball_hpos;	// ball current X position
-  reg [8:0] ball_vpos;	// ball current Y position
+  reg [9:0] ball_hpos;	// ball current X position
+  reg [9:0] ball_vpos;	// ball current Y position
   
-  reg [8:0] ball_horiz_move = -2;	// ball current X velocity
-  reg [8:0] ball_vert_move = 2;		// ball current Y velocity
+  reg [9:0] ball_horiz_move = -2;	// ball current X velocity
+  reg [9:0] ball_vert_move = 2;		// ball current Y velocity
   
   localparam ball_horiz_initial = 128;	// ball initial X position
   localparam ball_vert_initial = 128;	// ball initial Y position
@@ -51,8 +51,8 @@ module ball_absolute(
   end
   
   // offset of ball position from video beam
-  wire [8:0] ball_hdiff = hpos - ball_hpos;
-  wire [8:0] ball_vdiff = vpos - ball_vpos;
+  wire [9:0] ball_hdiff = hpos - ball_hpos;
+  wire [9:0] ball_vdiff = vpos - ball_vpos;
 
   // ball graphics output
   wire ball_hgfx = ball_hdiff < BALL_SIZE;
@@ -61,8 +61,8 @@ module ball_absolute(
 
   // collide with vertical and horizontal boundaries
   // these are set when the ball touches a border
-  wire ball_vert_collide = ball_vpos >= 240 - BALL_SIZE;
-  wire ball_horiz_collide = ball_hpos >= 256 - BALL_SIZE;
+  wire ball_vert_collide = ball_vpos >= 480 - BALL_SIZE;
+  wire ball_horiz_collide = ball_hpos >= 640 - BALL_SIZE;
 
   // combine signals to RGB output
   wire grid_gfx = (((hpos&7)==0) && ((vpos&7)==0));

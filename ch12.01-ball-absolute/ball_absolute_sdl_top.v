@@ -30,13 +30,13 @@ module bitmapped_case_sdl_top (
     .hsync(w_hsync),
     .vsync(w_vsync),
     .display_on(o_sdl_visible),
-    .hpos(o_sdl_hpos[8:0]),
-    .vpos(o_sdl_vpos[8:0]),
+    .hpos(o_sdl_hpos),
+    .vpos(o_sdl_vpos),
     .rgb(w_rgb)
   );
 
-  assign o_sdl_r = w_rgb[2]? 8'hff : 8'h00;
+  assign o_sdl_r = w_rgb[0]? 8'hff : 8'h00;
   assign o_sdl_g = w_rgb[1]? 8'hff : 8'h00;
-  assign o_sdl_b = w_rgb[0]? 8'hff : 8'h00;
+  assign o_sdl_b = w_rgb[2]? 8'hff : 8'h00;
 
 endmodule
