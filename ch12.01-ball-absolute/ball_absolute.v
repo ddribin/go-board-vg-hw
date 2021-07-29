@@ -5,7 +5,6 @@ A bouncing ball using absolute coordinates.
 module ball_absolute(
   input wire          clk,
   input wire          reset,
-  input wire          hsync,
   input wire          vsync,
   input wire          display_on,
   input wire [9:0]    hpos,
@@ -16,13 +15,13 @@ module ball_absolute(
   reg [9:0] ball_hpos;	// ball current X position
   reg [9:0] ball_vpos;	// ball current Y position
   
-  reg [9:0] ball_horiz_move = -2;	// ball current X velocity
-  reg [9:0] ball_vert_move = 2;		// ball current Y velocity
+  reg [9:0] ball_horiz_move; // = -2;	// ball current X velocity
+  reg [9:0] ball_vert_move; // = 2;		// ball current Y velocity
   
-  localparam ball_horiz_initial = 128;	// ball initial X position
-  localparam ball_vert_initial = 128;	// ball initial Y position
+  localparam ball_horiz_initial = 640/2;	// ball initial X position
+  localparam ball_vert_initial = 480/2;	// ball initial Y position
   
-  localparam BALL_SIZE = 4;		// ball size (in pixels)
+  localparam BALL_SIZE = 8;		// ball size (in pixels)
   
   // update horizontal timer
   always @(posedge vsync or posedge reset)
@@ -39,15 +38,23 @@ module ball_absolute(
   end
 
   // vertical bounce
-  always @(posedge ball_vert_collide)
+  always @(posedge ball_vert_collide or posedge reset)
   begin
-    ball_vert_move <= -ball_vert_move;
+    if (reset) begin
+      ball_vert_move <= 2;
+    end else begin 
+      ball_vert_move <= -ball_vert_move;
+    end
   end
 
   // horizontal bounce
-  always @(posedge ball_horiz_collide)
+  always @(posedge ball_horiz_collide or posedge reset)
   begin
-    ball_horiz_move <= -ball_horiz_move;
+    if (reset) begin
+      ball_horiz_move <= -2;
+    end else begin 
+      ball_horiz_move <= -ball_horiz_move;
+    end
   end
   
   // offset of ball position from video beam

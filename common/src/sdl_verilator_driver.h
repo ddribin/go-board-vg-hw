@@ -33,11 +33,6 @@ class SDLVerilatorDriver
         top->i_clk = 0;
         top->eval();
 
-        // Run until position is (0, 0)
-        while (!((top->o_sdl_vpos == 0) && (top->o_sdl_hpos == 0))) {
-            tick(top);
-        }
-
         State state = StateWaitingForStartOfFrame;
         uintptr_t pixels = 0;
         int pitch = 0;

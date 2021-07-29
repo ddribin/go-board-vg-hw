@@ -1,6 +1,6 @@
 `default_nettype none
 
-module bitmapped_case_sdl_top (
+module ball_absolute_sdl_top (
   input wire          i_clk,
   output wire [9:0]   o_sdl_hpos,
   output wire [9:0]   o_sdl_vpos,
@@ -10,11 +10,16 @@ module bitmapped_case_sdl_top (
   output wire [7:0]   o_sdl_b
 );
   
-  wire w_hsync;
+  wire w_reset;
+  reset_generator reset_gen (
+    .i_clk(i_clk),
+    .o_rst(w_reset)
+  );
+
   wire w_vsync;
   video_sync_generator sync_gen (
     .i_clk(i_clk),
-    .o_hsync(w_hsync),
+    .o_hsync(),
     .o_hblank(),
     .o_vsync(w_vsync),
     .o_vblank(),
@@ -26,8 +31,7 @@ module bitmapped_case_sdl_top (
   wire [2:0] w_rgb;
   ball_absolute ball_absolute (
     .clk(i_clk),
-    .reset(0),
-    .hsync(w_hsync),
+    .reset(w_reset),
     .vsync(w_vsync),
     .display_on(o_sdl_visible),
     .hpos(o_sdl_hpos),
