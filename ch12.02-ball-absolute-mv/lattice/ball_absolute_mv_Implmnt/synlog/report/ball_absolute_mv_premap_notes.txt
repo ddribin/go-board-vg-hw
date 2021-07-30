@@ -1,0 +1,6 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: BN225 |Writing default property annotation file /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/ball_absolute_mv.sap.
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[7] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[6] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[5] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) of type view:PrimLib.sdffre(prim) because it does not drive other instances.

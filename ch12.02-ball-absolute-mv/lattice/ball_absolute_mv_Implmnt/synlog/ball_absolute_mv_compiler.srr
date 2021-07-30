@@ -1,0 +1,101 @@
+Synopsys HDL Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Synopsys Verilog Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Running on host :ubuntu
+@I::"/home/dave/lscc/iCEcube2.2020.12/synpbase/lib/generic/sb_ice40.v" (library work)
+@I::"/home/dave/lscc/iCEcube2.2020.12/synpbase/lib/vlog/hypermods.v" (library __hyper__lib__)
+@I::"/home/dave/lscc/iCEcube2.2020.12/synpbase/lib/vlog/umr_capim.v" (library snps_haps)
+@I::"/home/dave/lscc/iCEcube2.2020.12/synpbase/lib/vlog/scemi_objects.v" (library snps_haps)
+@I::"/home/dave/lscc/iCEcube2.2020.12/synpbase/lib/vlog/scemi_pipes.svh" (library snps_haps)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v" (library work)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v" (library work)
+@I:"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.vh" (library work)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/reset_generator.v" (library work)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/video_sync_generator.v" (library work)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v" (library work)
+@I::"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/synchronizer.v" (library work)
+Verilog syntax check successful!
+Options changed - recompiling
+Selecting top level module ball_absolute_mv_vga_top
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/reset_generator.v":3:7:3:21|Synthesizing module reset_generator in library work.
+
+	COUNT_WIDTH=32'b00000000000000000000000000000100
+   Generated name = reset_generator_4s
+
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/video_sync_generator.v":3:7:3:26|Synthesizing module video_sync_generator in library work.
+
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/synchronizer.v":1:7:1:18|Synthesizing module synchronizer in library work.
+
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":4:7:4:20|Synthesizing module nes_controller in library work.
+
+	CYCLES_PER_PULSE=32'b00000000000000000000000001111101
+	STATE_IDLE=3'b000
+	STATE_BUTTON_A=3'b001
+	STATE_OTHER_BUTTONS=3'b010
+	STATE_VALID=3'b011
+	COUNT_WIDTH=32'b00000000000000000000000000001000
+	CYCLES_PER_BIT=32'b00000000000000000000000011111010
+	CYCLES_PER_READ_BIT=32'b00000000000000000000000010111011
+   Generated name = nes_controller_125s_0_1_2_3_8s_250s_187s
+
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":5:7:5:19|Synthesizing module ball_absolute in library work.
+
+@W: CL169 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":36:2:36:7|Pruning unused register r_ball_vert_collide. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":36:2:36:7|Pruning unused register r_ball_horiz_collide. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":36:2:36:7|Pruning unused register posedge_ball_vert_collide. Make sure that there are no unused intermediate registers.
+@W: CL169 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":36:2:36:7|Pruning unused register posedge_ball_horiz_collide. Make sure that there are no unused intermediate registers.
+@N: CL189 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":60:2:60:7|Register bit ball_vert_move[0] is always 0.
+@N: CL189 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":74:2:74:7|Register bit ball_horiz_move[0] is always 0.
+@W: CL279 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":60:2:60:7|Pruning register bits 9 to 3 of ball_vert_move[9:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":60:2:60:7|Pruning register bit 0 of ball_vert_move[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":74:2:74:7|Pruning register bits 9 to 3 of ball_horiz_move[9:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":74:2:74:7|Pruning register bit 0 of ball_horiz_move[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CG364 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":4:7:4:30|Synthesizing module ball_absolute_mv_vga_top in library work.
+
+@W: CS263 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":59:11:59:11|Port-width mismatch for port i_rst. The port definition is 1 bits, but the actual port connection bit width is 32. Adjust either the definition or the instantiation of this port.
+@W: CL271 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":71:2:71:7|Pruning unused bits 7 to 5 of r_buttons[7:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CL189 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":46:2:46:7|Register bit ball_hpos[0] is always 0.
+@N: CL189 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":46:2:46:7|Register bit ball_vpos[0] is always 0.
+@W: CL260 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":46:2:46:7|Pruning register bit 0 of ball_vpos[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute.v":46:2:46:7|Pruning register bit 0 of ball_hpos[9:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL201 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Trying to extract state machine for register r_state.
+@N: CL189 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Register bit r_state[2] is always 0.
+@W: CL260 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Pruning register bit 2 of r_state[2:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@N: CL159 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":8:22:8:26|Input i_rst is unused.
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 74MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Jul 30 02:40:00 2021
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+@N: NF107 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":4:7:4:30|Selected library: work cell: ball_absolute_mv_vga_top view verilog as top level
+@N: NF107 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":4:7:4:30|Selected library: work cell: ball_absolute_mv_vga_top view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Jul 30 02:40:01 2021
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Jul 30 02:40:01 2021
+
+###########################################################]

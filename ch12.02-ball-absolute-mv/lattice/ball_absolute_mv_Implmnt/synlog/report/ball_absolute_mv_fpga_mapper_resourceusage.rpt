@@ -1,0 +1,31 @@
+---------------------------------------
+Resource Usage Report for ball_absolute_mv_vga_top 
+
+Mapping to part: ice40hx1kvq100
+Cell usage:
+GND             5 uses
+SB_CARRY        52 uses
+SB_DFF          27 uses
+SB_DFFE         5 uses
+SB_DFFESR       4 uses
+SB_DFFESS       1 use
+SB_DFFSR        37 uses
+SB_DFFSS        7 uses
+SB_GB           1 use
+VCC             5 uses
+SB_LUT4         209 uses
+
+I/O ports: 15
+I/O primitives: 15
+SB_GB_IO       1 use
+SB_IO          14 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   81 (6%)
+
+@S |Mapping Summary:
+Total  LUTs: 209 (16%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 209 = 209 
+

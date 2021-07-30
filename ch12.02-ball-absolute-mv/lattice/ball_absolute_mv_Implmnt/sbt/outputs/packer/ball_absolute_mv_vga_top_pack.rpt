@@ -1,0 +1,93 @@
+* ******************************************************************************
+
+* iCEcube Report
+
+* Version:            2020.12.27943
+
+* Build Date:         Dec 10 2020 17:24:17
+
+* File Generated:     Jul 30 2021 02:40:48
+
+* Purpose:            General info of design implementation
+
+* Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+* ******************************************************************************
+
+Synthesis/Placement Summary:
+----------------------------
+    Status:  Successful
+    Runtime: 1 seconds
+
+Device Info:
+------------
+    Device Family: iCE40
+    Device:        iCE40HX1K
+    Package:       VQ100
+
+Design statistics:
+------------------
+    FFs:                  81
+    LUTs:                 219
+    RAMs:                 0
+    IOBs:                 15
+    GBs:                  2
+    PLLs:                 0
+    Warm Boots:           0
+
+Logic Resource Utilization:
+---------------------------
+    Total Logic Cells: 223/1280
+        Combinational Logic Cells: 142      out of   1280      11.0938%
+        Sequential Logic Cells:    81       out of   1280      6.32812%
+        Logic Tiles:               42       out of   160       26.25%
+    Registers: 
+        Logic Registers:           81       out of   1280      6.32812%
+        IO Registers:              0        out of   560       0
+    Block RAMs:                    0        out of   16        0%
+    Warm Boots:                    0        out of   1         0%
+    Pins:
+        Input Pins:                2        out of   72        2.77778%
+        Output Pins:               13       out of   72        18.0556%
+        InOut Pins:                0        out of   72        0%
+    Global Buffers:                2        out of   8         25%
+    PLLs:                          0        out of   0       
+
+IO Bank Utilization:
+--------------------
+    Bank 3: 1        out of   18        5.55556%
+    Bank 1: 3        out of   19        15.7895%
+    Bank 0: 0        out of   19        0%
+    Bank 2: 11       out of   16        68.75%
+
+Detailed I/O Info:
+------------------
+    Input Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name  
+    ----------  ---------  -----------  -------  -------  -----------    -----------  
+    15          Input      SB_LVCMOS    No       3        Simple Input   i_clk        
+    63          Input      SB_LVCMOS    No       1        Simple Input   io_pmod_3    
+
+    Output Pins: 
+    Pin Number  Direction  IO Standard  Pull Up  IO Bank  IO Function    Signal Name  
+    ----------  ---------  -----------  -------  -------  -----------    -----------  
+    26          Output     SB_LVCMOS    No       2        Simple Output  o_vga_hsync  
+    27          Output     SB_LVCMOS    No       2        Simple Output  o_vga_vsync  
+    28          Output     SB_LVCMOS    No       2        Simple Output  o_vga_b[0]   
+    29          Output     SB_LVCMOS    No       2        Simple Output  o_vga_g[0]   
+    30          Output     SB_LVCMOS    No       2        Simple Output  o_vga_g[1]   
+    33          Output     SB_LVCMOS    No       2        Simple Output  o_vga_g[2]   
+    36          Output     SB_LVCMOS    No       2        Simple Output  o_vga_r[0]   
+    37          Output     SB_LVCMOS    No       2        Simple Output  o_vga_r[1]   
+    40          Output     SB_LVCMOS    No       2        Simple Output  o_vga_r[2]   
+    41          Output     SB_LVCMOS    No       2        Simple Output  o_vga_b[1]   
+    42          Output     SB_LVCMOS    No       2        Simple Output  o_vga_b[2]   
+    64          Output     SB_LVCMOS    No       1        Simple Output  io_pmod_2    
+    65          Output     SB_LVCMOS    No       1        Simple Output  io_pmod_1    
+
+Detailed Global Buffer Info:
+----------------------------
+    Buffer Number  IO Bank  Driven By  Fanout  Signal Name           
+    -------------  -------  ---------  ------  -----------           
+    1              3        IO         81      i_clk_c_g             
+    6              3                   19      un1_w_reset_sn_0_i_g  

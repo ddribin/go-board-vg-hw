@@ -1,0 +1,259 @@
+ble_pack ball_absolute.un1_hpos_1_cry_1_c_inv_LC_52 {ball_absolute.un1_hpos_1_cry_1_c, ball_absolute.un1_hpos_1_cry_1_c_inv}
+ble_pack ball_absolute.un1_hpos_1_cry_2_c_inv_LC_53 {ball_absolute.un1_hpos_1_cry_2_c, ball_absolute.un1_hpos_1_cry_2_c_inv}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNIP79K[3]_LC_25 {ball_absolute.un1_hpos_1_cry_3_c, ball_absolute.ball_hpos_sbtinv_RNIP79K[3]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNISBAK[4]_LC_26 {ball_absolute.un1_hpos_1_cry_4_c, ball_absolute.ball_hpos_sbtinv_RNISBAK[4]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNIVFBK[5]_LC_27 {ball_absolute.un1_hpos_1_cry_5_c, ball_absolute.ball_hpos_sbtinv_RNIVFBK[5]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNI2KCK[6]_LC_20 {ball_absolute.un1_hpos_1_cry_6_c, ball_absolute.ball_hpos_sbtinv_RNI2KCK[6]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNI5ODK[7]_LC_22 {ball_absolute.un1_hpos_1_cry_7_c, ball_absolute.ball_hpos_sbtinv_RNI5ODK[7]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNI8SEK[8]_LC_23 {ball_absolute.un1_hpos_1_cry_8_c, ball_absolute.ball_hpos_sbtinv_RNI8SEK[8]}
+clb_pack PLB_0 {ball_absolute.un1_hpos_1_cry_1_c_inv_LC_52, ball_absolute.un1_hpos_1_cry_2_c_inv_LC_53, ball_absolute.ball_hpos_sbtinv_RNIP79K[3]_LC_25, ball_absolute.ball_hpos_sbtinv_RNISBAK[4]_LC_26, ball_absolute.ball_hpos_sbtinv_RNIVFBK[5]_LC_27, ball_absolute.ball_hpos_sbtinv_RNI2KCK[6]_LC_20, ball_absolute.ball_hpos_sbtinv_RNI5ODK[7]_LC_22, ball_absolute.ball_hpos_sbtinv_RNI8SEK[8]_LC_23}
+ble_pack ball_absolute.un1_hpos_1_cry_8_c_RNIVTUL_LC_54 {ball_absolute.un1_hpos_1_cry_8_c_RNIVTUL}
+clb_pack PLB_1 {ball_absolute.un1_hpos_1_cry_8_c_RNIVTUL_LC_54}
+ble_pack ball_absolute.un1_vpos_1_cry_1_c_inv_LC_55 {ball_absolute.un1_vpos_1_cry_1_c, ball_absolute.un1_vpos_1_cry_1_c_inv}
+ble_pack ball_absolute.un1_vpos_1_cry_2_c_inv_LC_60 {ball_absolute.un1_vpos_1_cry_2_c, ball_absolute.un1_vpos_1_cry_2_c_inv}
+ble_pack ball_absolute.un1_vpos_1_cry_2_c_RNI39HF_LC_56 {ball_absolute.un1_vpos_1_cry_3_c, ball_absolute.un1_vpos_1_cry_2_c_RNI39HF}
+ble_pack ball_absolute.un1_vpos_1_cry_3_c_RNI6DIF_LC_61 {ball_absolute.un1_vpos_1_cry_4_c, ball_absolute.un1_vpos_1_cry_3_c_RNI6DIF}
+ble_pack ball_absolute.un1_vpos_1_cry_4_c_RNI9HJF_LC_62 {ball_absolute.un1_vpos_1_cry_5_c, ball_absolute.un1_vpos_1_cry_4_c_RNI9HJF}
+ble_pack ball_absolute.un1_vpos_1_cry_5_c_RNICLKF_LC_64 {ball_absolute.un1_vpos_1_cry_6_c, ball_absolute.un1_vpos_1_cry_5_c_RNICLKF}
+ble_pack ball_absolute.un1_vpos_1_cry_6_c_RNIFPLF_LC_65 {ball_absolute.un1_vpos_1_cry_7_c, ball_absolute.un1_vpos_1_cry_6_c_RNIFPLF}
+ble_pack ball_absolute.un1_vpos_1_cry_7_c_RNIITMF_LC_66 {ball_absolute.un1_vpos_1_cry_8_c, ball_absolute.un1_vpos_1_cry_7_c_RNIITMF}
+clb_pack PLB_2 {ball_absolute.un1_vpos_1_cry_1_c_inv_LC_55, ball_absolute.un1_vpos_1_cry_2_c_inv_LC_60, ball_absolute.un1_vpos_1_cry_2_c_RNI39HF_LC_56, ball_absolute.un1_vpos_1_cry_3_c_RNI6DIF_LC_61, ball_absolute.un1_vpos_1_cry_4_c_RNI9HJF_LC_62, ball_absolute.un1_vpos_1_cry_5_c_RNICLKF_LC_64, ball_absolute.un1_vpos_1_cry_6_c_RNIFPLF_LC_65, ball_absolute.un1_vpos_1_cry_7_c_RNIITMF_LC_66}
+ble_pack ball_absolute.un1_vpos_1_cry_8_c_RNIIBJJ_LC_67 {ball_absolute.un1_vpos_1_cry_8_c_RNIIBJJ}
+clb_pack PLB_3 {ball_absolute.un1_vpos_1_cry_8_c_RNIIBJJ_LC_67}
+ble_pack reset_gen.rst_count[0]_LC_167 {reset_gen.rst_count[0], reset_gen.rst_count_cry_c[0], reset_gen.rst_count_RNO[0]}
+ble_pack reset_gen.rst_count[1]_LC_168 {reset_gen.rst_count[1], reset_gen.rst_count_cry_c[1], reset_gen.rst_count_RNO[1]}
+ble_pack reset_gen.rst_count[2]_LC_169 {reset_gen.rst_count[2], reset_gen.rst_count_cry_c[2], reset_gen.rst_count_RNO[2]}
+ble_pack reset_gen.rst_count[3]_LC_170 {reset_gen.rst_count[3], reset_gen.rst_count_cry_c[3], reset_gen.rst_count_RNO[3]}
+ble_pack reset_gen.rst_count[4]_LC_171 {reset_gen.rst_count[4], reset_gen.rst_count_RNO[4]}
+clb_pack PLB_4 {reset_gen.rst_count[0]_LC_167, reset_gen.rst_count[1]_LC_168, reset_gen.rst_count[2]_LC_169, reset_gen.rst_count[3]_LC_170, reset_gen.rst_count[4]_LC_171}
+ble_pack ball_absolute.un3_ball_hpos_cry_0_c_LC_219 {ball_absolute.un3_ball_hpos_cry_0_c}
+ble_pack ball_absolute.ball_hpos[2]_LC_4 {ball_absolute.ball_hpos[2], ball_absolute.un3_ball_hpos_cry_1_c, ball_absolute.ball_hpos_RNO[2]}
+ble_pack ball_absolute.ball_hpos[3]_LC_5 {ball_absolute.ball_hpos[3], ball_absolute.un3_ball_hpos_cry_2_c, ball_absolute.ball_hpos_RNO[3]}
+ble_pack ball_absolute.ball_hpos[4]_LC_6 {ball_absolute.ball_hpos[4], ball_absolute.un3_ball_hpos_cry_3_c, ball_absolute.ball_hpos_RNO[4]}
+ble_pack ball_absolute.ball_hpos[5]_LC_7 {ball_absolute.ball_hpos[5], ball_absolute.un3_ball_hpos_cry_4_c, ball_absolute.ball_hpos_RNO[5]}
+ble_pack ball_absolute.ball_hpos[6]_LC_8 {ball_absolute.ball_hpos[6], ball_absolute.un3_ball_hpos_cry_5_c, ball_absolute.ball_hpos_RNO[6]}
+ble_pack ball_absolute.ball_hpos[7]_LC_9 {ball_absolute.ball_hpos[7], ball_absolute.un3_ball_hpos_cry_6_c, ball_absolute.ball_hpos_RNO[7]}
+ble_pack ball_absolute.ball_hpos[8]_LC_10 {ball_absolute.ball_hpos[8], ball_absolute.un3_ball_hpos_cry_7_c, ball_absolute.ball_hpos_RNO[8]}
+clb_pack PLB_5 {ball_absolute.un3_ball_hpos_cry_0_c_LC_219, ball_absolute.ball_hpos[2]_LC_4, ball_absolute.ball_hpos[3]_LC_5, ball_absolute.ball_hpos[4]_LC_6, ball_absolute.ball_hpos[5]_LC_7, ball_absolute.ball_hpos[6]_LC_8, ball_absolute.ball_hpos[7]_LC_9, ball_absolute.ball_hpos[8]_LC_10}
+ble_pack ball_absolute.ball_hpos_esr[9]_LC_12 {ball_absolute.ball_hpos_esr[9], ball_absolute.ball_hpos_esr_RNO[9]}
+clb_pack PLB_6 {ball_absolute.ball_hpos_esr[9]_LC_12}
+ble_pack ball_absolute.un3_ball_vpos_cry_0_c_LC_220 {ball_absolute.un3_ball_vpos_cry_0_c}
+ble_pack ball_absolute.ball_vpos[2]_LC_32 {ball_absolute.ball_vpos[2], ball_absolute.un3_ball_vpos_cry_1_c, ball_absolute.ball_vpos_RNO[2]}
+ble_pack ball_absolute.ball_vpos[3]_LC_33 {ball_absolute.ball_vpos[3], ball_absolute.un3_ball_vpos_cry_2_c, ball_absolute.ball_vpos_RNO[3]}
+ble_pack ball_absolute.ball_vpos[4]_LC_34 {ball_absolute.ball_vpos[4], ball_absolute.un3_ball_vpos_cry_3_c, ball_absolute.ball_vpos_RNO[4]}
+ble_pack ball_absolute.ball_vpos[5]_LC_35 {ball_absolute.ball_vpos[5], ball_absolute.un3_ball_vpos_cry_4_c, ball_absolute.ball_vpos_RNO[5]}
+ble_pack ball_absolute.ball_vpos[6]_LC_36 {ball_absolute.ball_vpos[6], ball_absolute.un3_ball_vpos_cry_5_c, ball_absolute.ball_vpos_RNO[6]}
+ble_pack ball_absolute.ball_vpos[7]_LC_37 {ball_absolute.ball_vpos[7], ball_absolute.un3_ball_vpos_cry_6_c, ball_absolute.ball_vpos_RNO[7]}
+ble_pack ball_absolute.ball_vpos[8]_LC_38 {ball_absolute.ball_vpos[8], ball_absolute.un3_ball_vpos_cry_7_c, ball_absolute.ball_vpos_RNO[8]}
+clb_pack PLB_7 {ball_absolute.un3_ball_vpos_cry_0_c_LC_220, ball_absolute.ball_vpos[2]_LC_32, ball_absolute.ball_vpos[3]_LC_33, ball_absolute.ball_vpos[4]_LC_34, ball_absolute.ball_vpos[5]_LC_35, ball_absolute.ball_vpos[6]_LC_36, ball_absolute.ball_vpos[7]_LC_37, ball_absolute.ball_vpos[8]_LC_38}
+ble_pack ball_absolute.ball_vpos_esr[9]_LC_40 {ball_absolute.ball_vpos_esr[9], ball_absolute.ball_vpos_esr_RNO[9]}
+clb_pack PLB_8 {ball_absolute.ball_vpos_esr[9]_LC_40}
+ble_pack sync_gen.r_hpos_1_cry_1_c_LC_221 {sync_gen.r_hpos_1_cry_1_c}
+ble_pack sync_gen.r_hpos[2]_LC_179 {sync_gen.r_hpos[2], sync_gen.r_hpos_1_cry_2_c, sync_gen.r_hpos_RNO[2]}
+ble_pack sync_gen.r_hpos[3]_LC_180 {sync_gen.r_hpos[3], sync_gen.r_hpos_1_cry_3_c, sync_gen.r_hpos_RNO[3]}
+ble_pack sync_gen.r_hpos[4]_LC_181 {sync_gen.r_hpos[4], sync_gen.r_hpos_1_cry_4_c, sync_gen.r_hpos_RNO[4]}
+ble_pack sync_gen.r_hpos[5]_LC_182 {sync_gen.r_hpos[5], sync_gen.r_hpos_1_cry_5_c, sync_gen.r_hpos_RNO[5]}
+ble_pack sync_gen.r_hpos[6]_LC_183 {sync_gen.r_hpos[6], sync_gen.r_hpos_1_cry_6_c, sync_gen.r_hpos_RNO[6]}
+ble_pack sync_gen.r_hpos[7]_LC_184 {sync_gen.r_hpos[7], sync_gen.r_hpos_1_cry_7_c, sync_gen.r_hpos_RNO[7]}
+ble_pack sync_gen.r_hpos[8]_LC_185 {sync_gen.r_hpos[8], sync_gen.r_hpos_1_cry_8_c, sync_gen.r_hpos_RNO[8]}
+clb_pack PLB_9 {sync_gen.r_hpos_1_cry_1_c_LC_221, sync_gen.r_hpos[2]_LC_179, sync_gen.r_hpos[3]_LC_180, sync_gen.r_hpos[4]_LC_181, sync_gen.r_hpos[5]_LC_182, sync_gen.r_hpos[6]_LC_183, sync_gen.r_hpos[7]_LC_184, sync_gen.r_hpos[8]_LC_185}
+ble_pack sync_gen.r_hpos[9]_LC_186 {sync_gen.r_hpos[9], sync_gen.r_hpos_RNO[9]}
+clb_pack PLB_10 {sync_gen.r_hpos[9]_LC_186}
+ble_pack sync_gen.r_vpos_1_cry_1_c_LC_222 {sync_gen.r_vpos_1_cry_1_c}
+ble_pack sync_gen.r_vpos[2]_LC_194 {sync_gen.r_vpos[2], sync_gen.r_vpos_1_cry_2_c, sync_gen.r_vpos_RNO[2]}
+ble_pack sync_gen.r_vpos[3]_LC_195 {sync_gen.r_vpos[3], sync_gen.r_vpos_1_cry_3_c, sync_gen.r_vpos_RNO[3]}
+ble_pack sync_gen.r_vpos[4]_LC_196 {sync_gen.r_vpos[4], sync_gen.r_vpos_1_cry_4_c, sync_gen.r_vpos_RNO[4]}
+ble_pack sync_gen.r_vpos[5]_LC_197 {sync_gen.r_vpos[5], sync_gen.r_vpos_1_cry_5_c, sync_gen.r_vpos_RNO[5]}
+ble_pack sync_gen.r_vpos[6]_LC_198 {sync_gen.r_vpos[6], sync_gen.r_vpos_1_cry_6_c, sync_gen.r_vpos_RNO[6]}
+ble_pack sync_gen.r_vpos[7]_LC_199 {sync_gen.r_vpos[7], sync_gen.r_vpos_1_cry_7_c, sync_gen.r_vpos_RNO[7]}
+ble_pack sync_gen.r_vpos[8]_LC_200 {sync_gen.r_vpos[8], sync_gen.r_vpos_1_cry_8_c, sync_gen.r_vpos_RNO[8]}
+clb_pack PLB_11 {sync_gen.r_vpos_1_cry_1_c_LC_222, sync_gen.r_vpos[2]_LC_194, sync_gen.r_vpos[3]_LC_195, sync_gen.r_vpos[4]_LC_196, sync_gen.r_vpos[5]_LC_197, sync_gen.r_vpos[6]_LC_198, sync_gen.r_vpos[7]_LC_199, sync_gen.r_vpos[8]_LC_200}
+ble_pack sync_gen.r_vpos_esr[9]_LC_204 {sync_gen.r_vpos_esr[9], sync_gen.r_vpos_esr_RNO[9]}
+clb_pack PLB_12 {sync_gen.r_vpos_esr[9]_LC_204}
+ble_pack ball_absolute.ball_horiz_move[1]_LC_0 {ball_absolute.ball_horiz_move[1], ball_absolute.ball_horiz_move_RNO[1]}
+ble_pack ball_absolute.ball_hpos_esr_RNI8LEC1[9]_LC_11 {ball_absolute.ball_hpos_esr_RNI8LEC1[9]}
+ble_pack ball_absolute.ball_horiz_move[2]_LC_1 {ball_absolute.ball_horiz_move[2], ball_absolute.ball_horiz_move_RNO[2]}
+ble_pack ball_absolute.ball_hpos_RNIU6MO[3]_LC_2 {ball_absolute.ball_hpos_RNIU6MO[3]}
+ble_pack r_buttons_e_0_RNIMDI8_0[4]_LC_164 {r_buttons_e_0_RNIMDI8_0[4]}
+ble_pack ball_absolute.ball_vert_move[1]_LC_28 {ball_absolute.ball_vert_move[1], ball_absolute.ball_vert_move_RNO[1]}
+ble_pack ball_absolute.ball_vpos_esr_RNIAS481[9]_LC_39 {ball_absolute.ball_vpos_esr_RNIAS481[9]}
+ble_pack ball_absolute.ball_vert_move[2]_LC_29 {ball_absolute.ball_vert_move[2], ball_absolute.ball_vert_move_RNO[2]}
+clb_pack PLB_13 {ball_absolute.ball_horiz_move[1]_LC_0, ball_absolute.ball_hpos_esr_RNI8LEC1[9]_LC_11, ball_absolute.ball_horiz_move[2]_LC_1, ball_absolute.ball_hpos_RNIU6MO[3]_LC_2, r_buttons_e_0_RNIMDI8_0[4]_LC_164, ball_absolute.ball_vert_move[1]_LC_28, ball_absolute.ball_vpos_esr_RNIAS481[9]_LC_39, ball_absolute.ball_vert_move[2]_LC_29}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNI2A7G4[3]_LC_19 {ball_absolute.ball_hpos_sbtinv_RNI2A7G4[3]}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNI4PGS4[3]_LC_21 {ball_absolute.ball_hpos_sbtinv_RNI4PGS4[3]}
+ble_pack ball_absolute.un1_vpos_1_cry_2_c_RNIFCEK8_LC_57 {ball_absolute.un1_vpos_1_cry_2_c_RNIFCEK8}
+ble_pack ball_absolute.un1_vpos_1_cry_2_c_RNIJELT3_LC_59 {ball_absolute.un1_vpos_1_cry_2_c_RNIJELT3}
+ble_pack ball_absolute.g_i_o3_1_LC_48 {ball_absolute.g_i_o3_1}
+ble_pack ball_absolute.ball_hpos_sbtinv_RNIEOKH2[5]_LC_24 {ball_absolute.ball_hpos_sbtinv_RNIEOKH2[5]}
+ble_pack ball_absolute.g_i_o3_LC_47 {ball_absolute.g_i_o3}
+ble_pack sync_gen.r_hsync_LC_187 {sync_gen.r_hsync, sync_gen.r_hsync_RNO}
+clb_pack PLB_14 {ball_absolute.ball_hpos_sbtinv_RNI2A7G4[3]_LC_19, ball_absolute.ball_hpos_sbtinv_RNI4PGS4[3]_LC_21, ball_absolute.un1_vpos_1_cry_2_c_RNIFCEK8_LC_57, ball_absolute.un1_vpos_1_cry_2_c_RNIJELT3_LC_59, ball_absolute.g_i_o3_1_LC_48, ball_absolute.ball_hpos_sbtinv_RNIEOKH2[5]_LC_24, ball_absolute.g_i_o3_LC_47, sync_gen.r_hsync_LC_187}
+ble_pack ball_absolute.ball_vpos_RNIMO8J[3]_LC_30 {ball_absolute.ball_vpos_RNIMO8J[3]}
+ble_pack ball_absolute.ball_vpos_sbtinv[3]_LC_41 {ball_absolute.ball_vpos_sbtinv[3]}
+ble_pack ball_absolute.ball_vpos_sbtinv[4]_LC_42 {ball_absolute.ball_vpos_sbtinv[4]}
+ble_pack ball_absolute.ball_vpos_sbtinv[5]_LC_43 {ball_absolute.ball_vpos_sbtinv[5]}
+ble_pack ball_absolute.ball_vpos_sbtinv[6]_LC_44 {ball_absolute.ball_vpos_sbtinv[6]}
+ble_pack ball_absolute.g_i_o3_1_3_LC_49 {ball_absolute.g_i_o3_1_3}
+ble_pack sync_gen.r_hpos[1]_LC_178 {sync_gen.r_hpos[1], sync_gen.r_hpos_RNO[1]}
+ble_pack sync_gen.r_hpos_RNI2H27[0]_LC_172 {sync_gen.r_hpos_RNI2H27[0]}
+clb_pack PLB_15 {ball_absolute.ball_vpos_RNIMO8J[3]_LC_30, ball_absolute.ball_vpos_sbtinv[3]_LC_41, ball_absolute.ball_vpos_sbtinv[4]_LC_42, ball_absolute.ball_vpos_sbtinv[5]_LC_43, ball_absolute.ball_vpos_sbtinv[6]_LC_44, ball_absolute.g_i_o3_1_3_LC_49, sync_gen.r_hpos[1]_LC_178, sync_gen.r_hpos_RNI2H27[0]_LC_172}
+ble_pack ball_absolute.un1_vpos_1_cry_2_c_RNIHVBH3_LC_58 {ball_absolute.un1_vpos_1_cry_2_c_RNIHVBH3}
+ble_pack ball_absolute.un1_vpos_1_cry_4_c_RNIMTKU1_LC_63 {ball_absolute.un1_vpos_1_cry_4_c_RNIMTKU1}
+ble_pack nes_controller.o_controller_clock_ess_LC_73 {nes_controller.o_controller_clock_ess, nes_controller.o_controller_clock_ess_RNO}
+ble_pack nes_controller.r_state_6_1_0_.m6_0_o2_0_LC_156 {nes_controller.r_state_6_1_0_.m6_0_o2_0}
+ble_pack nes_controller.r_state_6_1_0_.m6_0_o2_0_0_LC_157 {nes_controller.r_state_6_1_0_.m6_0_o2_0_0}
+ble_pack nes_controller.o_controller_latch_RNO_1_LC_82 {nes_controller.o_controller_latch_RNO_1}
+ble_pack nes_controller.o_controller_latch_RNO_0_LC_81 {nes_controller.o_controller_latch_RNO_0}
+ble_pack nes_controller.o_controller_latch_RNO_2_LC_83 {nes_controller.o_controller_latch_RNO_2}
+clb_pack PLB_16 {ball_absolute.un1_vpos_1_cry_2_c_RNIHVBH3_LC_58, ball_absolute.un1_vpos_1_cry_4_c_RNIMTKU1_LC_63, nes_controller.o_controller_clock_ess_LC_73, nes_controller.r_state_6_1_0_.m6_0_o2_0_LC_156, nes_controller.r_state_6_1_0_.m6_0_o2_0_0_LC_157, nes_controller.o_controller_latch_RNO_1_LC_82, nes_controller.o_controller_latch_RNO_0_LC_81, nes_controller.o_controller_latch_RNO_2_LC_83}
+ble_pack nes_controller.o_controller_clock_ess_RNO_1_LC_75 {nes_controller.o_controller_clock_ess_RNO_1}
+ble_pack nes_controller.o_controller_clock_ess_RNO_0_LC_74 {nes_controller.o_controller_clock_ess_RNO_0}
+ble_pack nes_controller.o_controller_clock_ess_RNO_2_LC_76 {nes_controller.o_controller_clock_ess_RNO_2}
+ble_pack nes_controller.o_controller_clock_ess_RNO_5_LC_79 {nes_controller.o_controller_clock_ess_RNO_5}
+ble_pack nes_controller.r_button_count[1]_LC_98 {nes_controller.r_button_count[1], nes_controller.r_button_count_RNO[1]}
+ble_pack nes_controller.r_button_count[0]_LC_94 {nes_controller.r_button_count[0], nes_controller.r_button_count_RNO[0]}
+ble_pack nes_controller.r_state_6_1_0_.g0_0_LC_150 {nes_controller.r_state_6_1_0_.g0_0}
+ble_pack nes_controller.r_state_6_1_0_.g0_0_0_LC_151 {nes_controller.r_state_6_1_0_.g0_0_0}
+clb_pack PLB_17 {nes_controller.o_controller_clock_ess_RNO_1_LC_75, nes_controller.o_controller_clock_ess_RNO_0_LC_74, nes_controller.o_controller_clock_ess_RNO_2_LC_76, nes_controller.o_controller_clock_ess_RNO_5_LC_79, nes_controller.r_button_count[1]_LC_98, nes_controller.r_button_count[0]_LC_94, nes_controller.r_state_6_1_0_.g0_0_LC_150, nes_controller.r_state_6_1_0_.g0_0_0_LC_151}
+ble_pack nes_controller.o_controller_clock_ess_RNO_3_LC_77 {nes_controller.o_controller_clock_ess_RNO_3}
+ble_pack nes_controller.r_count[2]_LC_129 {nes_controller.r_count[2], nes_controller.r_count_RNO[2]}
+ble_pack nes_controller.r_count_RNIGB5G1[6]_LC_113 {nes_controller.r_count_RNIGB5G1[6]}
+ble_pack nes_controller.r_count_RNI7L2F3[7]_LC_109 {nes_controller.r_count_RNI7L2F3[7]}
+ble_pack nes_controller.r_count[1]_LC_125 {nes_controller.r_count[1], nes_controller.r_count_RNO[1]}
+ble_pack nes_controller.r_count_RNIUIQ61[5]_LC_116 {nes_controller.r_count_RNIUIQ61[5]}
+ble_pack nes_controller.r_state_RNI7B6D4[1]_LC_163 {nes_controller.r_state_RNI7B6D4[1]}
+ble_pack nes_controller.o_valid_esr_RNO_2_LC_87 {nes_controller.o_valid_esr_RNO_2}
+clb_pack PLB_18 {nes_controller.o_controller_clock_ess_RNO_3_LC_77, nes_controller.r_count[2]_LC_129, nes_controller.r_count_RNIGB5G1[6]_LC_113, nes_controller.r_count_RNI7L2F3[7]_LC_109, nes_controller.r_count[1]_LC_125, nes_controller.r_count_RNIUIQ61[5]_LC_116, nes_controller.r_state_RNI7B6D4[1]_LC_163, nes_controller.o_valid_esr_RNO_2_LC_87}
+ble_pack nes_controller.o_valid_esr_RNO_0_LC_85 {nes_controller.o_valid_esr_RNO_0}
+ble_pack nes_controller.o_valid_esr_RNO_LC_84 {nes_controller.o_valid_esr_RNO}
+ble_pack nes_controller.o_valid_esr_RNO_1_LC_86 {nes_controller.o_valid_esr_RNO_1}
+ble_pack nes_controller.o_valid_esr_RNO_4_LC_89 {nes_controller.o_valid_esr_RNO_4}
+ble_pack nes_controller.o_valid_esr_RNO_3_LC_88 {nes_controller.o_valid_esr_RNO_3}
+ble_pack nes_controller.r_state[0]_LC_154 {nes_controller.r_state[0], nes_controller.r_state_6_1_0_.m6_0}
+ble_pack nes_controller.r_state[1]_LC_159 {nes_controller.r_state[1], nes_controller.r_state_6_1_0_.m7_0}
+clb_pack PLB_19 {nes_controller.o_valid_esr_RNO_0_LC_85, nes_controller.o_valid_esr_RNO_LC_84, nes_controller.o_valid_esr_RNO_1_LC_86, nes_controller.o_valid_esr_RNO_4_LC_89, nes_controller.o_valid_esr_RNO_3_LC_88, nes_controller.r_state[0]_LC_154, nes_controller.r_state[1]_LC_159}
+ble_pack nes_controller.r_button_count_RNI6E9M3[0]_LC_90 {nes_controller.r_button_count_RNI6E9M3[0]}
+ble_pack nes_controller.r_button_count_RNIBSP4[2]_LC_91 {nes_controller.r_button_count_RNIBSP4[2]}
+ble_pack nes_controller.r_count[4]_LC_137 {nes_controller.r_count[4], nes_controller.r_count_RNO[4]}
+ble_pack nes_controller.r_count[3]_LC_133 {nes_controller.r_count[3], nes_controller.r_count_RNO[3]}
+ble_pack nes_controller.r_count_RNO_0[4]_LC_121 {nes_controller.r_count_RNO_0[4]}
+ble_pack nes_controller.r_count_RNIPM2O[4]_LC_115 {nes_controller.r_count_RNIPM2O[4]}
+ble_pack nes_controller.r_count_RNO_3[6]_LC_135 {nes_controller.r_count_RNO_3[6]}
+ble_pack nes_controller.r_count_RNO_6[6]_LC_145 {nes_controller.r_count_RNO_6[6]}
+clb_pack PLB_20 {nes_controller.r_button_count_RNI6E9M3[0]_LC_90, nes_controller.r_button_count_RNIBSP4[2]_LC_91, nes_controller.r_count[4]_LC_137, nes_controller.r_count[3]_LC_133, nes_controller.r_count_RNO_0[4]_LC_121, nes_controller.r_count_RNIPM2O[4]_LC_115, nes_controller.r_count_RNO_3[6]_LC_135, nes_controller.r_count_RNO_6[6]_LC_145}
+ble_pack nes_controller.r_button_count_RNIGLIE[2]_LC_92 {nes_controller.r_button_count_RNIGLIE[2]}
+ble_pack nes_controller.r_state_6_1_0_.m6_0_1_LC_155 {nes_controller.r_state_6_1_0_.m6_0_1}
+ble_pack nes_controller.r_button_count[2]_LC_102 {nes_controller.r_button_count[2], nes_controller.r_button_count_RNO[2]}
+ble_pack nes_controller.r_count_RNO_2[5]_LC_130 {nes_controller.r_count_RNO_2[5]}
+ble_pack nes_controller.r_count_RNO_0[5]_LC_122 {nes_controller.r_count_RNO_0[5]}
+ble_pack nes_controller.r_count_RNO_3[5]_LC_134 {nes_controller.r_count_RNO_3[5]}
+ble_pack nes_controller.r_count_RNO_5[5]_LC_141 {nes_controller.r_count_RNO_5[5]}
+ble_pack nes_controller.r_button_count_RNO_1[2]_LC_101 {nes_controller.r_button_count_RNO_1[2]}
+clb_pack PLB_21 {nes_controller.r_button_count_RNIGLIE[2]_LC_92, nes_controller.r_state_6_1_0_.m6_0_1_LC_155, nes_controller.r_button_count[2]_LC_102, nes_controller.r_count_RNO_2[5]_LC_130, nes_controller.r_count_RNO_0[5]_LC_122, nes_controller.r_count_RNO_3[5]_LC_134, nes_controller.r_count_RNO_5[5]_LC_141, nes_controller.r_button_count_RNO_1[2]_LC_101}
+ble_pack nes_controller.r_button_count_RNIUFR11[0]_LC_93 {nes_controller.r_button_count_RNIUFR11[0]}
+ble_pack nes_controller.r_count[0]_LC_118 {nes_controller.r_count[0], nes_controller.r_count_RNO[0]}
+ble_pack nes_controller.r_count_RNO_0[0]_LC_119 {nes_controller.r_count_RNO_0[0]}
+ble_pack nes_controller.r_state_RNI0M3U[1]_LC_161 {nes_controller.r_state_RNI0M3U[1]}
+ble_pack nes_controller.r_state_6_1_0_.g0_3_LC_152 {nes_controller.r_state_6_1_0_.g0_3}
+ble_pack nes_controller.r_state_6_1_0_.g0_LC_149 {nes_controller.r_state_6_1_0_.g0}
+ble_pack nes_controller.r_count[7]_LC_146 {nes_controller.r_count[7], nes_controller.r_count_RNO[7]}
+ble_pack nes_controller.o_controller_clock_ess_RNO_4_LC_78 {nes_controller.o_controller_clock_ess_RNO_4}
+clb_pack PLB_22 {nes_controller.r_button_count_RNIUFR11[0]_LC_93, nes_controller.r_count[0]_LC_118, nes_controller.r_count_RNO_0[0]_LC_119, nes_controller.r_state_RNI0M3U[1]_LC_161, nes_controller.r_state_6_1_0_.g0_3_LC_152, nes_controller.r_state_6_1_0_.g0_LC_149, nes_controller.r_count[7]_LC_146, nes_controller.o_controller_clock_ess_RNO_4_LC_78}
+ble_pack nes_controller.r_button_count_RNO_0[0]_LC_95 {nes_controller.r_button_count_RNO_0[0]}
+ble_pack nes_controller.r_button_count_RNO_0[2]_LC_97 {nes_controller.r_button_count_RNO_0[2]}
+ble_pack nes_controller.r_count_RNO_2[6]_LC_131 {nes_controller.r_count_RNO_2[6]}
+ble_pack nes_controller.r_count_RNO_0[6]_LC_123 {nes_controller.r_count_RNO_0[6]}
+ble_pack nes_controller.r_count[6]_LC_143 {nes_controller.r_count[6], nes_controller.r_count_RNO[6]}
+ble_pack nes_controller.r_count_RNO_1[6]_LC_127 {nes_controller.r_count_RNO_1[6]}
+ble_pack nes_controller.r_count_RNO_4[6]_LC_139 {nes_controller.r_count_RNO_4[6]}
+ble_pack nes_controller.r_count_RNO_7[6]_LC_148 {nes_controller.r_count_RNO_7[6]}
+clb_pack PLB_23 {nes_controller.r_button_count_RNO_0[0]_LC_95, nes_controller.r_button_count_RNO_0[2]_LC_97, nes_controller.r_count_RNO_2[6]_LC_131, nes_controller.r_count_RNO_0[6]_LC_123, nes_controller.r_count[6]_LC_143, nes_controller.r_count_RNO_1[6]_LC_127, nes_controller.r_count_RNO_4[6]_LC_139, nes_controller.r_count_RNO_7[6]_LC_148}
+ble_pack nes_controller.r_button_count_RNO_0[1]_LC_96 {nes_controller.r_button_count_RNO_0[1]}
+ble_pack nes_controller.r_button_count_RNO_1[1]_LC_100 {nes_controller.r_button_count_RNO_1[1]}
+ble_pack nes_controller.r_button_count_RNO_2[1]_LC_104 {nes_controller.r_button_count_RNO_2[1]}
+ble_pack nes_controller.r_count[5]_LC_140 {nes_controller.r_count[5], nes_controller.r_count_RNO[5]}
+ble_pack nes_controller.r_count_RNO_1[5]_LC_126 {nes_controller.r_count_RNO_1[5]}
+ble_pack nes_controller.r_count_RNO_7[5]_LC_147 {nes_controller.r_count_RNO_7[5]}
+ble_pack nes_controller.r_count_RNO_6[5]_LC_144 {nes_controller.r_count_RNO_6[5]}
+ble_pack nes_controller.r_state_6_1_0_.g0_4_LC_153 {nes_controller.r_state_6_1_0_.g0_4}
+clb_pack PLB_24 {nes_controller.r_button_count_RNO_0[1]_LC_96, nes_controller.r_button_count_RNO_1[1]_LC_100, nes_controller.r_button_count_RNO_2[1]_LC_104, nes_controller.r_count[5]_LC_140, nes_controller.r_count_RNO_1[5]_LC_126, nes_controller.r_count_RNO_7[5]_LC_147, nes_controller.r_count_RNO_6[5]_LC_144, nes_controller.r_state_6_1_0_.g0_4_LC_153}
+ble_pack nes_controller.r_button_count_RNO_1[0]_LC_99 {nes_controller.r_button_count_RNO_1[0]}
+ble_pack nes_controller.r_button_count_RNO_2[0]_LC_103 {nes_controller.r_button_count_RNO_2[0]}
+ble_pack nes_controller.r_button_count_RNO_3[0]_LC_106 {nes_controller.r_button_count_RNO_3[0]}
+ble_pack nes_controller.r_count_RNO_4[5]_LC_138 {nes_controller.r_count_RNO_4[5]}
+ble_pack nes_controller.r_count_RNIUIQ61[7]_LC_117 {nes_controller.r_count_RNIUIQ61[7]}
+ble_pack nes_controller.r_count_RNI7L2F3[5]_LC_108 {nes_controller.r_count_RNI7L2F3[5]}
+ble_pack nes_controller.r_count_RNIIU341[6]_LC_114 {nes_controller.r_count_RNIIU341[6]}
+ble_pack nes_controller.o_buttons[4]_LC_72 {nes_controller.o_buttons[4], nes_controller.o_buttons_RNO[4]}
+clb_pack PLB_25 {nes_controller.r_button_count_RNO_1[0]_LC_99, nes_controller.r_button_count_RNO_2[0]_LC_103, nes_controller.r_button_count_RNO_3[0]_LC_106, nes_controller.r_count_RNO_4[5]_LC_138, nes_controller.r_count_RNIUIQ61[7]_LC_117, nes_controller.r_count_RNI7L2F3[5]_LC_108, nes_controller.r_count_RNIIU341[6]_LC_114, nes_controller.o_buttons[4]_LC_72}
+ble_pack nes_controller.r_button_count_RNO_2[2]_LC_105 {nes_controller.r_button_count_RNO_2[2]}
+ble_pack nes_controller.r_state_6_1_0_.m6_0_o2_0_1_LC_158 {nes_controller.r_state_6_1_0_.m6_0_o2_0_1}
+ble_pack nes_controller.r_count_RNIEQ341[1]_LC_111 {nes_controller.r_count_RNIEQ341[1]}
+ble_pack nes_controller.r_count_RNO_0[3]_LC_120 {nes_controller.r_count_RNO_0[3]}
+ble_pack nes_controller.r_count_RNO_1[7]_LC_128 {nes_controller.r_count_RNO_1[7]}
+ble_pack nes_controller.r_count_RNO_0[7]_LC_124 {nes_controller.r_count_RNO_0[7]}
+ble_pack nes_controller.r_count_RNO_2[7]_LC_132 {nes_controller.r_count_RNO_2[7]}
+ble_pack nes_controller.r_count_RNO_3[7]_LC_136 {nes_controller.r_count_RNO_3[7]}
+clb_pack PLB_26 {nes_controller.r_button_count_RNO_2[2]_LC_105, nes_controller.r_state_6_1_0_.m6_0_o2_0_1_LC_158, nes_controller.r_count_RNIEQ341[1]_LC_111, nes_controller.r_count_RNO_0[3]_LC_120, nes_controller.r_count_RNO_1[7]_LC_128, nes_controller.r_count_RNO_0[7]_LC_124, nes_controller.r_count_RNO_2[7]_LC_132, nes_controller.r_count_RNO_3[7]_LC_136}
+ble_pack nes_controller.r_button_count_RNO_3[2]_LC_107 {nes_controller.r_button_count_RNO_3[2]}
+ble_pack nes_controller.r_count_RNIDMEV[5]_LC_110 {nes_controller.r_count_RNIDMEV[5]}
+ble_pack nes_controller.o_valid_esr_LC_210 {nes_controller.o_valid_esr, nes_controller.r_button_count_RNI6E9M3_0_nes_controller.o_valid_esr_REP_LUT4_0}
+ble_pack nes_controller.r_count_RNIGB5G1_0[6]_LC_112 {nes_controller.r_count_RNIGB5G1_0[6]}
+ble_pack nes_controller.r_count_RNO_5[6]_LC_142 {nes_controller.r_count_RNO_5[6]}
+ble_pack nes_controller.r_state_RNI3QNE[1]_LC_162 {nes_controller.r_state_RNI3QNE[1]}
+ble_pack nes_controller.r_state_RNI0M3U_0[1]_LC_160 {nes_controller.r_state_RNI0M3U_0[1]}
+ble_pack sync_gen.r_hpos_RNIJ9NH_0[4]_LC_173 {sync_gen.r_hpos_RNIJ9NH_0[4]}
+clb_pack PLB_27 {nes_controller.r_button_count_RNO_3[2]_LC_107, nes_controller.r_count_RNIDMEV[5]_LC_110, nes_controller.o_valid_esr_LC_210, nes_controller.r_count_RNIGB5G1_0[6]_LC_112, nes_controller.r_count_RNO_5[6]_LC_142, nes_controller.r_state_RNI3QNE[1]_LC_162, nes_controller.r_state_RNI0M3U_0[1]_LC_160, sync_gen.r_hpos_RNIJ9NH_0[4]_LC_173}
+ble_pack sync_gen.r_hpos_RNIJ9NH[4]_LC_174 {sync_gen.r_hpos_RNIJ9NH[4]}
+ble_pack sync_gen.r_hpos_RNIVMH3[9]_LC_176 {sync_gen.r_hpos_RNIVMH3[9]}
+ble_pack sync_gen.r_hpos_RNINAA5[5]_LC_175 {sync_gen.r_hpos_RNINAA5[5]}
+ble_pack sync_gen.r_hsync_RNO_0_LC_188 {sync_gen.r_hsync_RNO_0}
+ble_pack sync_gen.r_hpos[0]_LC_177 {sync_gen.r_hpos[0], sync_gen.r_hpos_RNO[0]}
+ble_pack sync_gen.r_vpos_RNI6FL1[3]_LC_190 {sync_gen.r_vpos_RNI6FL1[3]}
+ble_pack sync_gen.r_vpos_esr_RNIG6UP[9]_LC_202 {sync_gen.r_vpos_esr_RNIG6UP[9]}
+ble_pack sync_gen.r_vpos_esr_RNO_0[9]_LC_203 {sync_gen.r_vpos_esr_RNO_0[9]}
+clb_pack PLB_28 {sync_gen.r_hpos_RNIJ9NH[4]_LC_174, sync_gen.r_hpos_RNIVMH3[9]_LC_176, sync_gen.r_hpos_RNINAA5[5]_LC_175, sync_gen.r_hsync_RNO_0_LC_188, sync_gen.r_hpos[0]_LC_177, sync_gen.r_vpos_RNI6FL1[3]_LC_190, sync_gen.r_vpos_esr_RNIG6UP[9]_LC_202, sync_gen.r_vpos_esr_RNO_0[9]_LC_203}
+ble_pack sync_gen.r_vpos_esr_RNI5UU6[9]_LC_201 {sync_gen.r_vpos_esr_RNI5UU6[9]}
+ble_pack r_vblank_strobe_LC_166 {r_vblank_strobe, r_vblank_strobe_RNO}
+ble_pack sync_gen.r_vpos_RNINRQ[6]_LC_191 {sync_gen.r_vpos_RNINRQ[6]}
+ble_pack sync_gen.r_vsync_RNO_1_LC_207 {sync_gen.r_vsync_RNO_1}
+ble_pack sync_gen.r_vsync_LC_205 {sync_gen.r_vsync, sync_gen.r_vsync_RNO}
+ble_pack sync_gen.r_vsync_RNO_2_LC_208 {sync_gen.r_vsync_RNO_2}
+ble_pack r_vblank_LC_218 {r_vblank, sync_gen.r_vpos_esr_RNI5UU6_9_r_vblank_REP_LUT4_0}
+ble_pack sync_gen.r_vsync_RNO_0_LC_206 {sync_gen.r_vsync_RNO_0}
+clb_pack PLB_29 {sync_gen.r_vpos_esr_RNI5UU6[9]_LC_201, r_vblank_strobe_LC_166, sync_gen.r_vpos_RNINRQ[6]_LC_191, sync_gen.r_vsync_RNO_1_LC_207, sync_gen.r_vsync_LC_205, sync_gen.r_vsync_RNO_2_LC_208, r_vblank_LC_218, sync_gen.r_vsync_RNO_0_LC_206}
+ble_pack nes_controller.o_buttons[0]_LC_68 {nes_controller.o_buttons[0], nes_controller.o_buttons_RNO[0]}
+ble_pack nes_controller.o_buttons[1]_LC_69 {nes_controller.o_buttons[1], nes_controller.o_buttons_RNO[1]}
+ble_pack nes_controller.o_buttons[2]_LC_70 {nes_controller.o_buttons[2], nes_controller.o_buttons_RNO[2]}
+ble_pack nes_controller.o_buttons[3]_LC_71 {nes_controller.o_buttons[3], nes_controller.o_buttons_RNO[3]}
+ble_pack pmod_3_sync.r_input_sync_2_LC_212 {pmod_3_sync.r_input_sync_2, pmod_3_sync.r_input_sync_2_THRU_LUT4_0}
+ble_pack pmod_3_sync.r_input_sync_1_LC_211 {pmod_3_sync.r_input_sync_1, pmod_3_sync.r_input_sync_1_THRU_LUT4_0}
+ble_pack sync_gen.r_vpos_RNI0781[4]_LC_189 {sync_gen.r_vpos_RNI0781[4]}
+ble_pack ball_absolute.posedge_vsync_RNIMJ5H_LC_50 {ball_absolute.posedge_vsync_RNIMJ5H}
+clb_pack PLB_30 {nes_controller.o_buttons[0]_LC_68, nes_controller.o_buttons[1]_LC_69, nes_controller.o_buttons[2]_LC_70, nes_controller.o_buttons[3]_LC_71, pmod_3_sync.r_input_sync_2_LC_212, pmod_3_sync.r_input_sync_1_LC_211, sync_gen.r_vpos_RNI0781[4]_LC_189, ball_absolute.posedge_vsync_RNIMJ5H_LC_50}
+ble_pack ball_absolute.ball_hpos[1]_LC_3 {ball_absolute.ball_hpos[1], ball_absolute.ball_hpos_RNO[1]}
+ble_pack ball_absolute.ball_vpos[1]_LC_31 {ball_absolute.ball_vpos[1], ball_absolute.ball_vpos_RNO[1]}
+ble_pack r_buttons_e_0_RNIMDI8[4]_LC_165 {r_buttons_e_0_RNIMDI8[4]}
+ble_pack ball_absolute.ball_hpos_sbtinv[3]_LC_13 {ball_absolute.ball_hpos_sbtinv[3]}
+ble_pack ball_absolute.ball_hpos_sbtinv[4]_LC_14 {ball_absolute.ball_hpos_sbtinv[4]}
+ble_pack ball_absolute.ball_hpos_sbtinv[5]_LC_15 {ball_absolute.ball_hpos_sbtinv[5]}
+ble_pack ball_absolute.ball_hpos_sbtinv[6]_LC_16 {ball_absolute.ball_hpos_sbtinv[6]}
+ble_pack ball_absolute.ball_hpos_sbtinv[7]_LC_17 {ball_absolute.ball_hpos_sbtinv[7]}
+clb_pack PLB_31 {ball_absolute.ball_hpos[1]_LC_3, ball_absolute.ball_vpos[1]_LC_31, r_buttons_e_0_RNIMDI8[4]_LC_165, ball_absolute.ball_hpos_sbtinv[3]_LC_13, ball_absolute.ball_hpos_sbtinv[4]_LC_14, ball_absolute.ball_hpos_sbtinv[5]_LC_15, ball_absolute.ball_hpos_sbtinv[6]_LC_16, ball_absolute.ball_hpos_sbtinv[7]_LC_17}
+ble_pack ball_absolute.posedge_vsync_LC_51 {ball_absolute.posedge_vsync, ball_absolute.posedge_vsync_RNO}
+ble_pack ball_absolute.r_vsync_LC_209 {ball_absolute.r_vsync, ball_absolute.r_vsync_THRU_LUT4_0}
+ble_pack ball_absolute.ball_hpos_sbtinv[8]_LC_18 {ball_absolute.ball_hpos_sbtinv[8]}
+ble_pack ball_absolute.ball_vpos_sbtinv[7]_LC_45 {ball_absolute.ball_vpos_sbtinv[7]}
+ble_pack ball_absolute.ball_vpos_sbtinv[8]_LC_46 {ball_absolute.ball_vpos_sbtinv[8]}
+clb_pack PLB_32 {ball_absolute.posedge_vsync_LC_51, ball_absolute.r_vsync_LC_209, ball_absolute.ball_hpos_sbtinv[8]_LC_18, ball_absolute.ball_vpos_sbtinv[7]_LC_45, ball_absolute.ball_vpos_sbtinv[8]_LC_46}
+ble_pack sync_gen.r_vpos[1]_LC_193 {sync_gen.r_vpos[1], sync_gen.r_vpos_RNO[1]}
+ble_pack sync_gen.r_vpos[0]_LC_192 {sync_gen.r_vpos[0], sync_gen.r_vpos_RNO[0]}
+clb_pack PLB_33 {sync_gen.r_vpos[1]_LC_193, sync_gen.r_vpos[0]_LC_192}
+ble_pack nes_controller.o_controller_latch_LC_80 {nes_controller.o_controller_latch, nes_controller.o_controller_latch_RNO}
+clb_pack PLB_34 {nes_controller.o_controller_latch_LC_80}
+ble_pack r_buttons_e_0[0]_LC_213 {r_buttons_e_0[0], r_buttons_e_0_0_THRU_LUT4_0}
+ble_pack r_buttons_e_0[1]_LC_214 {r_buttons_e_0[1], r_buttons_e_0_1_THRU_LUT4_0}
+ble_pack r_buttons_e_0[2]_LC_215 {r_buttons_e_0[2], r_buttons_e_0_2_THRU_LUT4_0}
+ble_pack r_buttons_e_0[3]_LC_216 {r_buttons_e_0[3], r_buttons_e_0_3_THRU_LUT4_0}
+ble_pack r_buttons_e_0[4]_LC_217 {r_buttons_e_0[4], r_buttons_e_0_4_THRU_LUT4_0}
+clb_pack PLB_35 {r_buttons_e_0[0]_LC_213, r_buttons_e_0[1]_LC_214, r_buttons_e_0[2]_LC_215, r_buttons_e_0[3]_LC_216, r_buttons_e_0[4]_LC_217}

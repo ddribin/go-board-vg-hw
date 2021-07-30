@@ -1,0 +1,14 @@
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+@N: MT206 |Auto Constrain mode is enabled
+@N: MO231 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/reset_generator.v":13:2:13:7|Found counter in view:work.ball_absolute_mv_vga_top(verilog) instance reset_gen.rst_count[4:0] 
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[7] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[6] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) because it does not drive other instances.
+@N: BN362 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|Removing sequential instance o_buttons[5] (in view: work.nes_controller_125s_0_1_2_3_8s_250s_187s(verilog)) because it does not drive other instances.
+@N: FX1016 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":5:22:5:26|SB_GB_IO inserted on the port i_clk.
+@N: FX1017 :|SB_GB inserted on the net un1_w_reset_sn_0_i.
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: FX1056 |Writing EDF file: /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/ball_absolute_mv.edf
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.

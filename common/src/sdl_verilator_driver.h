@@ -1,6 +1,7 @@
 #ifndef SDL_VERILATOR_DRIVER_H
 #define SDL_VERILATOR_DRIVER_H
 
+#include <functional>
 #include <verilated.h>
 #include "sdl_window_container.h"
 
@@ -8,8 +9,19 @@ template <class TopModule>
 class SDLVerilatorDriver
 {
     public:
+    typedef std::function<void (const SDL_Event *, TopModule *)> EventHook;
     static const int H_RES = 640;
     static const int V_RES = 480;
+
+    SDLVerilatorDriver()
+        : event_hook_(null_event_hook)
+    {
+    }
+
+    void setEventHook(EventHook event_hook)
+    {
+        event_hook_ = event_hook;
+    }
 
     int Run(int argc, char *argv[], bool use_vsync=true)
     {
@@ -66,16 +78,12 @@ class SDLVerilatorDriver
 
                 case StateVsync: {
                     if (y == V_RES && x == 0) {
-                        SDL_Event e;
-                        if (SDL_PollEvent(&e)) {
-                            if (e.type == SDL_QUIT) {
-                                state = StateDone;
-                                break;
-                            }
+                        if (handle_events(top)) {
+                            window_container.RenderFrame();
+                            state = StateWaitingForStartOfFrame;
+                        } else {
+                            state = StateDone;
                         }
-
-                        window_container.RenderFrame();
-                        state = StateWaitingForStartOfFrame;
                     }
                     break;
                 }
@@ -95,6 +103,26 @@ class SDLVerilatorDriver
     }
 
     private:
+    EventHook event_hook_;
+
+    static void null_event_hook(const SDL_Event *e, TopModule *top)
+    {
+
+    }
+
+    bool handle_events(TopModule *top)
+    {
+        SDL_Event e;
+        while (SDL_PollEvent(&e))
+        {
+            if (e.type == SDL_QUIT) {
+                return false;
+            }
+            event_hook_(&e, top);
+        }
+        return true;
+    }
+
     typedef enum {
         StateWaitingForStartOfFrame,
         StateCopyingPixelData,

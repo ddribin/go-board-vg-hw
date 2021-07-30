@@ -1,0 +1,14 @@
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+File /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synwork/ball_absolute_mv_comp.srs changed - recompiling
+@N: NF107 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":4:7:4:30|Selected library: work cell: ball_absolute_mv_vga_top view verilog as top level
+@N: NF107 :"/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/ball_absolute_mv_vga_top.v":4:7:4:30|Selected library: work cell: ball_absolute_mv_vga_top view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri Jul 30 02:40:02 2021
+
+###########################################################]

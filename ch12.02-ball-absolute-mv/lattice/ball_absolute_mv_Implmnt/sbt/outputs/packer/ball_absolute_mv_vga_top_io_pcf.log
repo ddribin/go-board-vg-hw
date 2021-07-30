@@ -1,0 +1,15 @@
+OUTPUT o_vga_vsync 	 location (2, 0, 1) 	 27 	 
+OUTPUT o_vga_r[2] 	 location (9, 0, 1) 	 40 	 
+OUTPUT o_vga_r[1] 	 location (7, 0, 1) 	 37 	 
+OUTPUT o_vga_r[0] 	 location (6, 0, 0) 	 36 	 
+OUTPUT o_vga_hsync 	 location (2, 0, 0) 	 26 	 
+OUTPUT o_vga_g[2] 	 location (6, 0, 1) 	 33 	 
+OUTPUT o_vga_g[1] 	 location (4, 0, 0) 	 30 	 
+OUTPUT o_vga_g[0] 	 location (3, 0, 1) 	 29 	 
+OUTPUT o_vga_b[2] 	 location (10, 0, 1) 	 42 	 
+OUTPUT o_vga_b[1] 	 location (10, 0, 0) 	 41 	 
+OUTPUT o_vga_b[0] 	 location (3, 0, 0) 	 28 	 
+INPUT  io_pmod_3 	 location (13, 9, 0) 	 63 	 
+OUTPUT io_pmod_2 	 location (13, 11, 0) 	 64 	 
+OUTPUT io_pmod_1 	 location (13, 11, 1) 	 65 	 
+INPUT  i_clk 	 location (0, 8, 1) 	 15 	 

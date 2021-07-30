@@ -1,0 +1,7 @@
+/home/dave/lscc/iCEcube2.2020.12/synpbase/bin/syn_nfilter  -link  -multisrs  /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synwork/ball_absolute_mv_comp.srs  -osyn  /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synwork/ball_absolute_mv_mult.srs  -log  /home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synlog/ball_absolute_mv_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synwork/ball_absolute_mv_comp.srs|io:i|time:1627630801|size:13300|exec:0
+file:/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synwork/ball_absolute_mv_mult.srs|io:o|time:1627630802|size:5374|exec:0
+file:/home/dave/Shared/verilog/go-board-vg-hw/ch12.02-ball-absolute-mv/lattice/ball_absolute_mv_Implmnt/synlog/ball_absolute_mv_multi_srs_gen.srr|io:o|time:1627630802|size:948|exec:0
+file:/home/dave/lscc/iCEcube2.2020.12/synpbase/linux_a_64/syn_nfilter|io:i|time:1614879350|size:11473624|exec:1
+file:/home/dave/lscc/iCEcube2.2020.12/synpbase/bin/syn_nfilter|io:i|time:1616474276|size:368|exec:1
