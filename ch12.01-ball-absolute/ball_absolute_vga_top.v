@@ -9,12 +9,13 @@ module ball_absolute_vga_top (
   output wire [2:0]   o_vga_b,
   output wire         io_pmod_1,
   output wire         io_pmod_2,
-  output wire         io_pmod_3
+  output wire         io_pmod_3,
+  output wire         io_pmod_4
 );
   
   wire w_reset;
   reset_generator #(
-    .COUNT_WIDTH(18)
+    .COUNT_WIDTH(4)
   ) reset_gen (
     .i_clk(i_clk),
     .o_rst(w_reset)
@@ -50,7 +51,8 @@ module ball_absolute_vga_top (
   assign o_vga_b = w_rgb[2]? 3'b111 : 3'b000;
 
   assign io_pmod_1 = w_reset;
-  assign io_pmod_2 = o_vga_vsync;
-  assign io_pmod_3 = w_visible;
+  assign io_pmod_2 = i_clk;
+  assign io_pmod_3 = 1'b1;
+  assign io_pmod_4 = 1'b0;
 
 endmodule

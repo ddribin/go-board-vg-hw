@@ -23,14 +23,29 @@ module ball_absolute(
   
   localparam BALL_SIZE = 8;		// ball size (in pixels)
   
+  reg r_vsync;
+  reg r_ball_vert_collide;
+  reg r_ball_horiz_collide;
+  reg posedge_vsync;
+  reg posedge_ball_vert_collide;
+  reg posedge_ball_horiz_collide;
+  always @(posedge clk) begin
+    r_vsync <= vsync;
+    r_ball_vert_collide <= ball_vert_collide;
+    r_ball_horiz_collide <= ball_horiz_collide;
+    posedge_vsync <= r_vsync == 1'b0 && vsync == 1'b1;
+    posedge_ball_vert_collide <= r_ball_vert_collide == 1'b0 && ball_vert_collide == 1'b1;
+    posedge_ball_horiz_collide <= r_ball_horiz_collide == 1'b0 && ball_horiz_collide == 1'b1;
+  end
+
   // update horizontal timer
-  always @(posedge vsync or posedge reset)
+  always @(posedge clk)
   begin
     if (reset) begin
       // reset ball position to center
       ball_hpos <= ball_horiz_initial;
       ball_vpos <= ball_vert_initial;
-    end else begin
+    end else if (posedge_vsync) begin
       // add velocity vector to ball position
       ball_hpos <= ball_hpos + ball_horiz_move;
       ball_vpos <= ball_vpos + ball_vert_move;
@@ -38,21 +53,21 @@ module ball_absolute(
   end
 
   // vertical bounce
-  always @(posedge ball_vert_collide or posedge reset)
+  always @(posedge clk)
   begin
     if (reset) begin
       ball_vert_move <= 2;
-    end else begin 
+    end else if (posedge_ball_vert_collide) begin 
       ball_vert_move <= -ball_vert_move;
     end
   end
 
   // horizontal bounce
-  always @(posedge ball_horiz_collide or posedge reset)
+  always @(posedge clk)
   begin
     if (reset) begin
       ball_horiz_move <= -2;
-    end else begin 
+    end else if (posedge_ball_horiz_collide) begin 
       ball_horiz_move <= -ball_horiz_move;
     end
   end

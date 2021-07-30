@@ -1,13 +1,13 @@
 `default_nettype none
 
 module reset_generator #(
-  COUNT_WIDTH = 2
+  parameter COUNT_WIDTH = 2
 ) (
   input wire    i_clk,
   output wire   o_rst
 );
 
-  reg [COUNT_WIDTH:0]   rst_count;
+  reg [COUNT_WIDTH:0]   rst_count = 0;
   assign o_rst = !rst_count[COUNT_WIDTH];
 
   always @(posedge i_clk) begin

@@ -4,7 +4,7 @@ Version=Lattice Semiconductor Corporation iCEcube - Release: 2020.12.27943 - Bui
 ProjectName=ball_absolute
 Vendor=SiliconBlue
 Synthesis=synplify
-ProjectVFiles=../ball_absolute.v=work,../ball_absolute_vga_top.v=work,../../common/rtl/video_sync_generator.v=work,../../common/rtl/reset_generator.v
+ProjectVFiles=../ball_absolute.v=work,../ball_absolute_vga_top.v=work,../../common/rtl/video_sync_generator.v=work,../../common/rtl/reset_generator.v=work
 ProjectCFiles=
 CurImplementation=ball_absolute_Implmnt
 Implementations=ball_absolute_Implmnt
