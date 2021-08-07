@@ -1,8 +1,0 @@
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|User-specified initial value defined for instance nes_controller.r_count[7:0] is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/nes_controller.v":32:2:32:7|User-specified initial value defined for instance nes_controller.r_state[1:0] is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/synchronizer.v":9:2:9:7|User-specified initial value defined for instance pmod_3_sync.r_input_sync_2 is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/synchronizer.v":9:2:9:7|User-specified initial value defined for instance pmod_3_sync.r_input_sync_1 is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/video_sync_generator.v":59:2:59:7|User-specified initial value defined for instance sync_gen.r_vpos[9:0] is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/video_sync_generator.v":49:2:49:7|User-specified initial value defined for instance sync_gen.r_hpos[9:0] is being ignored. 
-@W: FX1039 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/reset_generator.v":13:2:13:7|User-specified initial value defined for instance reset_gen.rst_count[4:0] is being ignored. 
-@W: MT420 |Found inferred clock ball_absolute_mv_vga_top|i_clk with period 8.08ns. Please declare a user-defined clock on object "p:i_clk"

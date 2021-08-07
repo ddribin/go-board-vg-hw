@@ -1,1 +1,0 @@
-@W: MT529 :"/home/dave/Shared/verilog/go-board-vg-hw/common/rtl/reset_generator.v":13:2:13:7|Found inferred clock ball_absolute_mv_vga_top|i_clk which controls 84 sequential elements including reset_gen.rst_count[4:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
