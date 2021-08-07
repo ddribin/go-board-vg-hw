@@ -5,15 +5,15 @@
 
 
 #project files
-add_file -verilog "../ball_absolute.v"
-add_file -verilog "../ball_absolute_mv_vga_top.v"
-add_file -verilog "../../common/rtl/reset_generator.v"
-add_file -verilog "../../common/rtl/video_sync_generator.v"
-add_file -verilog "../../common/rtl/nes_controller.v"
-add_file -verilog "../../common/rtl/synchronizer.v"
 
 
 
+add_file -verilog -lib work "../ball_absolute.v" 
+add_file -verilog -lib work "../ball_absolute_mv_vga_top.v" 
+add_file -verilog -lib work "../../common/rtl/reset_generator.v" 
+add_file -verilog -lib work "../../common/rtl/video_sync_generator.v" 
+add_file -verilog -lib work "../../common/rtl/nes_controller.v" 
+add_file -verilog -lib work "../../common/rtl/synchronizer.v" 
 #implementation: "ball_absolute_mv_Implmnt"
 impl -add ball_absolute_mv_Implmnt -type fpga
 
@@ -28,7 +28,7 @@ set_option -include_path {../../common/rtl/}
 set_option -technology SBTiCE40
 set_option -part iCE40HX1K
 set_option -package VQ100
-set_option -speed_grade ""
+set_option -speed_grade 
 set_option -part_companion ""
 
 #compilation/mapping options
@@ -72,4 +72,5 @@ set_option -write_apr_constraint 1
 
 #set result format/file last
 project -result_file "ball_absolute_mv_Implmnt/ball_absolute_mv.edf"
-impl -active "ball_absolute_mv_Implmnt"
+impl -active ball_absolute_mv_Implmnt
+project -run synthesis -clean
