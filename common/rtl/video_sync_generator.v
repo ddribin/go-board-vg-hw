@@ -1,4 +1,5 @@
 `default_nettype none
+`timescale 1ns/1ps
 
 module video_sync_generator #(
   // 640 x 480 at 60 Hz (non-interlaced)
@@ -18,6 +19,7 @@ module video_sync_generator #(
 ) (
   // Pixel Clock = 25.175 MHz
   input wire        i_clk,
+  input wire        i_rst,
 
   output wire       o_hsync,
   output wire       o_hblank,
@@ -47,23 +49,28 @@ module video_sync_generator #(
   wire w_end_of_line = r_hpos == H_TOTAL-1;
 
   always @(posedge i_clk) begin
-    r_hsync <= ((r_hpos >= H_SYNC_START-1) && (r_hpos < H_SYNC_END-1));
-
-    if (r_hpos < H_TOTAL-1) begin
-      r_hpos <= r_hpos + 1;
-    end else begin
+    if (i_rst) begin
+      r_hsync <= 0;
+      r_vsync <= 0;
       r_hpos <= 0;
-    end
-  end
+      r_vpos <= 0;
+    end else begin
+      r_hsync <= ((r_hpos >= H_SYNC_START-1) && (r_hpos < H_SYNC_END-1));
 
-  always @(posedge i_clk) begin
-    if (w_end_of_line) begin
-      r_vsync = ((r_vpos >= V_SYNC_START-1) && (r_vpos < V_SYNC_END-1));
-
-      if (r_vpos < V_TOTAL-1) begin
-        r_vpos <= r_vpos + 1;
+      if (r_hpos < H_TOTAL-1) begin
+        r_hpos <= r_hpos + 1;
       end else begin
-        r_vpos <= 0;
+        r_hpos <= 0;
+      end
+
+      if (w_end_of_line) begin
+        r_vsync <= ((r_vpos >= V_SYNC_START-1) && (r_vpos < V_SYNC_END-1));
+
+        if (r_vpos < V_TOTAL-1) begin
+          r_vpos <= r_vpos + 1;
+        end else begin
+          r_vpos <= 0;
+        end
       end
     end
   end

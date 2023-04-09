@@ -1,4 +1,5 @@
 `default_nettype none
+`timescale 1ns/1ps
 
 module ball_absolute_vga_top (
   input wire          i_clk,
@@ -26,6 +27,7 @@ module ball_absolute_vga_top (
   wire w_visible;
   video_sync_generator sync_gen (
     .i_clk(i_clk),
+    .i_rst(w_reset),
     .o_hsync(o_vga_hsync),
     .o_hblank(),
     .o_vsync(o_vga_vsync),

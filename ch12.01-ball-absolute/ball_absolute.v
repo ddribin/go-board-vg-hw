@@ -1,6 +1,7 @@
 /*
 A bouncing ball using absolute coordinates.
 */
+`timescale 1ns/1ps
 
 module ball_absolute(
   input wire          clk,

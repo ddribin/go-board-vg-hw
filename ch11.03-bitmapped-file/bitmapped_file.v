@@ -1,4 +1,5 @@
 `default_nettype none
+`timescale 1ns/1ps
 
 module bitmapped_file (
   input wire [9:0]    i_hpos,

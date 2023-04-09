@@ -1,4 +1,5 @@
 `default_nettype none
+`timescale 1ns/1ps
 `include "nes_controller.vh"
 
 module ball_absolute_mv_vga_top (
@@ -27,6 +28,7 @@ module ball_absolute_mv_vga_top (
   wire w_vblank;
   video_sync_generator sync_gen (
     .i_clk(i_clk),
+    .i_rst(w_reset),
     .o_hsync(o_vga_hsync),
     .o_hblank(),
     .o_vsync(o_vga_vsync),

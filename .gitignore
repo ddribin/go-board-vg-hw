@@ -2,3 +2,6 @@ build/
 bitmaps/
 scratch/
 .vscode/
+__pycache__/
+sim_build/
+results.xml

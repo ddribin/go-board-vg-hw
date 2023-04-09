@@ -1,4 +1,5 @@
 `default_nettype none
+`timescale 1ns/1ps
 
 module bitmapped_file_sdl_top (
   input wire          i_clk,
@@ -12,6 +13,7 @@ module bitmapped_file_sdl_top (
   
   video_sync_generator sync_gen (
     .i_clk(i_clk),
+    .i_rst(0),
     .o_hsync(),
     .o_hblank(),
     .o_vsync(),
