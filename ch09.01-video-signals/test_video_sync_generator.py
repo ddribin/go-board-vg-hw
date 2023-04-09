@@ -179,7 +179,6 @@ async def test_one_frame(dut):
         (40,  1), (50, 0),  # Frame 0, Line 2
         (200, 1),           # Frame 1, Line 0
     ]
-    dut._log.info(f'vpos: {vpos.changes}')
     assert vpos.changes == [
         (0,   0),
         (20,  1), (40,  2), (60,  3), (80,  4), (100, 5),

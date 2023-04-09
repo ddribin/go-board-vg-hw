@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 
 module bitmapped_case (
   input wire [9:0]    i_hpos,

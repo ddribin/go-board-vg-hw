@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 
 module video_sync_generator #(
   // 640 x 480 at 60 Hz (non-interlaced)

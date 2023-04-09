@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 `include "nes_controller.vh"
 
 module ball_absolute_mv_vga_top (

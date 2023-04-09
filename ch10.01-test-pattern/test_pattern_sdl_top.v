@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 
 module test_pattern_sdl_top (
   input wire          i_clk,

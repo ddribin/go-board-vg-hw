@@ -11,5 +11,9 @@ TOPLEVEL = video_sync_generator_tb
 MODULE = test_video_sync_generator
 
 # include cocotb's make rules to take care of the simulator setup
-include $(shell cocotb-config --makefiles)/Makefile.sim
-# include $(shell cocotb-test --inc-makefile)
+ifeq (, $(shell which cocotb-test))
+  include $(shell cocotb-config --makefiles)/Makefile.sim
+else
+  $(info Found cocotb-test)
+  include $(shell cocotb-test --inc-makefile)
+endif

@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module video_sync_generator_tb (
   input i_clk,
   input i_rst,

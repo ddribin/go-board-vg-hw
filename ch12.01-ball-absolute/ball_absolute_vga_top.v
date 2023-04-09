@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 
 module ball_absolute_vga_top (
   input wire          i_clk,

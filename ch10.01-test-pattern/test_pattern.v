@@ -1,5 +1,4 @@
 `default_nettype none
-`timescale 1ns/1ps
 
 module test_pattern (
   input wire [9:0]    i_hpos,
